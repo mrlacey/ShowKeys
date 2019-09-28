@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# SA1602: Enumeration items should be documented
+dotnet_diagnostic.SA1602.severity = none

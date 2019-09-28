@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="ShowKeys.DisplayedKeyPress"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="1800">
+    <UserControl.Resources>
+        <Style TargetType="Border">
+            <Style.Setters>
+                <Setter Property="Height" Value="50" />
+                <Setter Property="Background" Value="LightGray" />
+                <Setter Property="BorderThickness" Value="5" />
+                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,0.9" StartPoint="0.5,0">
+                            <GradientStop Color="DarkGray" Offset="0.9"/>
+                            <GradientStop Color="LightGray"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style.Setters>
+        </Style>
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel x:Name="control" Orientation="Horizontal" >
+            <Border Width="80">
+                <TextBlock Text="Ctrl" />
+            </Border>
+            <TextBlock Text=" + " />
+        </StackPanel>
+        <Border x:Name="k" Width="60">
+            <TextBlock Text="K" />
+        </Border>
+        <Border x:Name="r" Width="60">
+            <TextBlock Text="R" />
+        </Border>
+        <TextBlock Text="," x:Name="comma" Margin="20,-5,20,0" />
+        <StackPanel x:Name="control2" Orientation="Horizontal" >
+            <Border Width="80">
+                <TextBlock Text="Ctrl" />
+            </Border>
+            <TextBlock Text=" + " />
+        </StackPanel>
+        <Border x:Name="a" Width="60">
+            <TextBlock Text="A" />
+        </Border>
+        <Border x:Name="c" Width="60">
+            <TextBlock Text="C" />
+        </Border>
+        <Border x:Name="d" Width="60">
+            <TextBlock Text="D" />
+        </Border>
+        <Border x:Name="f" Width="60">
+            <TextBlock Text="F" />
+        </Border>
+        <Border x:Name="i" Width="60">
+            <TextBlock Text="I" />
+        </Border>
+        <Border x:Name="r2" Width="60">
+            <TextBlock Text="R" />
+        </Border>
+        <Border x:Name="s" Width="60">
+            <TextBlock Text="S" />
+        </Border>
+        <Border x:Name="u" Width="60">
+            <TextBlock Text="U" />
+        </Border>
+        <Border x:Name="v" Width="60">
+            <TextBlock Text="V" />
+        </Border>
+        <Border x:Name="x" Width="60">
+            <TextBlock Text="X" />
+        </Border>
+        <Border x:Name="y" Width="60">
+            <TextBlock Text="Y" />
+        </Border>
+        <Border x:Name="z" Width="60">
+            <TextBlock Text="Z" />
+        </Border>
+        <StackPanel Orientation="Horizontal" x:Name="shift">
+            <Border Width="60">
+                <TextBlock Text="↑" />
+            </Border>
+            <TextBlock Text=" + " />
+        </StackPanel>
+        <Border x:Name="tab" Width="60">
+            <TextBlock Text="Tab" />
+        </Border>
+        <StackPanel Orientation="Horizontal" x:Name="alt">
+            <Border Width="60">
+                <TextBlock Text="Alt" />
+            </Border>
+            <TextBlock Text=" + " />
+        </StackPanel>
+        <Border x:Name="delete" Width="60">
+            <TextBlock Text="Del" />
+        </Border>
+        <Border x:Name="escape" Width="60">
+            <TextBlock Text="Esc" />
+        </Border>
+        <Border x:Name="pageUp" Width="80">
+            <TextBlock Text="PgUp" />
+        </Border>
+        <Border x:Name="pageDown" Width="80">
+            <TextBlock Text="PgDn" />
+        </Border>
+        <Border x:Name="upArrow" Width="60">
+            <TextBlock Text="▲" />
+        </Border>
+        <Border x:Name="downArrow" Width="60">
+            <TextBlock Text="▼" />
+        </Border>
+
+    </StackPanel>
+</UserControl>
