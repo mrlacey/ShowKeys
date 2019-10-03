@@ -37,7 +37,9 @@ namespace ShowKeys
         ICommandHandler<SaveCommandArgs>,
         ICommandHandler<SelectAllCommandArgs>,
         ICommandHandler<SurroundWithCommandArgs>,
-        ICommandHandler<UndoCommandArgs>
+        ICommandHandler<UndoCommandArgs>,
+        ICommandHandler<ViewCodeCommandArgs>,
+        ICommandHandler<ViewFormCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -257,6 +259,24 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(ViewCodeCommandArgs args, CommandExecutionContext executionContext)
+        {
+            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            {
+                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.ViewCode).ConfigureAwait(false);
+            });
+            return false;
+        }
+
+        public bool ExecuteCommand(ViewFormCommandArgs args, CommandExecutionContext executionContext)
+        {
+            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            {
+                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.ViewDesigner).ConfigureAwait(false);
+            });
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -304,5 +324,9 @@ namespace ShowKeys
         public CommandState GetCommandState(SurroundWithCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(UndoCommandArgs args) => CommandState.Unspecified;
+
+        public CommandState GetCommandState(ViewCodeCommandArgs args) => CommandState.Unspecified;
+
+        public CommandState GetCommandState(ViewFormCommandArgs args) => CommandState.Unspecified;
     }
 }

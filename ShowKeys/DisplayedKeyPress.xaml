@@ -32,7 +32,7 @@
         </Style>
     </UserControl.Resources>
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+    <StackPanel x:Name="Container" Orientation="Horizontal" HorizontalAlignment="Center">
         <StackPanel x:Name="control" Orientation="Horizontal" >
             <Border Width="80">
                 <TextBlock Text="Ctrl" />
@@ -94,6 +94,9 @@
             </Border>
             <TextBlock Text=" + " />
         </StackPanel>
+        <Border x:Name="f7" Width="60">
+            <TextBlock Text="F7" />
+        </Border>
         <Border x:Name="tab" Width="60">
             <TextBlock Text="Tab" />
         </Border>

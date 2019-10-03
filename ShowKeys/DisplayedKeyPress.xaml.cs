@@ -24,79 +24,198 @@ namespace ShowKeys
 
         public async Task ShowAsync(SupportedCommand cmd)
         {
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (!options.IsEnabled)
+            {
+                return;
+            }
+
+            this.Container.Margin = new Thickness(options.Margin);
+
             switch (cmd)
             {
                 case SupportedCommand.Cut:
-                    await this.DisplayAsync(this.control, this.x).ConfigureAwait(false);
+                    if (options.ShowCut)
+                    {
+                        await this.DisplayAsync(this.control, this.x).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.Copy:
-                    await this.DisplayAsync(this.control, this.c).ConfigureAwait(false);
+                    if (options.ShowCopy)
+                    {
+                        await this.DisplayAsync(this.control, this.c).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.Paste:
-                    await this.DisplayAsync(this.control, this.v).ConfigureAwait(false);
+                    if (options.ShowPaste)
+                    {
+                        await this.DisplayAsync(this.control, this.v).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.Escape:
-                    await this.DisplayAsync(this.escape).ConfigureAwait(false);
+                    if (options.ShowEscape)
+                    {
+                        await this.DisplayAsync(this.escape).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.Tab:
-                    await this.DisplayAsync(this.tab).ConfigureAwait(false);
+                    if (options.ShowTab)
+                    {
+                        await this.DisplayAsync(this.tab).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.BackTab:
-                    await this.DisplayAsync(this.shift, this.tab).ConfigureAwait(false);
+                    if (options.ShowBackTab)
+                    {
+                        await this.DisplayAsync(this.shift, this.tab).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.PageDown:
-                    await this.DisplayAsync(this.pageUp).ConfigureAwait(false);
+                    if (options.ShowPageDown)
+                    {
+                        await this.DisplayAsync(this.pageUp).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.Delete:
-                    await this.DisplayAsync(this.delete).ConfigureAwait(false);
+                    if (options.ShowDelete)
+                    {
+                        await this.DisplayAsync(this.delete).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.PageUp:
-                    await this.DisplayAsync(this.pageUp).ConfigureAwait(false);
+                    if (options.ShowPageUp)
+                    {
+                        await this.DisplayAsync(this.pageUp).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.CommentSelection:
-                    await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.c).ConfigureAwait(false);
+                    if (options.ShowCommentSelection)
+                    {
+                        await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.c).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.UncommentSelection:
-                    await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.u).ConfigureAwait(false);
+                    if (options.ShowUncommentSelection)
+                    {
+                        await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.u).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.DuplicateSelection:
-                    await this.DisplayAsync(this.control, this.d).ConfigureAwait(false);
+                    if (options.ShowDuplicateSelection)
+                    {
+                        await this.DisplayAsync(this.control, this.d).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.FormatDocument:
-                    await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.d).ConfigureAwait(false);
+                    if (options.ShowFormatDocument)
+                    {
+                        await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.d).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.FormatSelection:
-                    await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.f).ConfigureAwait(false);
+                    if (options.ShowFormatSelection)
+                    {
+                        await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.f).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.InsertSnippet:
-                    await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.x).ConfigureAwait(false);
+                    if (options.ShowInsertSnippet)
+                    {
+                        await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.x).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.InvokeQuickInfo:
-                    await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.i).ConfigureAwait(false);
+                    if (options.ShowInvokeQuickInfo)
+                    {
+                        await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.i).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.MoveSelectedLineDown:
-                    await this.DisplayAsync(this.alt, this.downArrow).ConfigureAwait(false);
+                    if (options.ShowMoveSelectedLineDown)
+                    {
+                        await this.DisplayAsync(this.alt, this.downArrow).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.MoveSelectedLineUp:
-                    await this.DisplayAsync(this.alt, this.upArrow).ConfigureAwait(false);
+                    if (options.ShowMoveSelectedLineUp)
+                    {
+                        await this.DisplayAsync(this.alt, this.upArrow).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.Redo:
-                    await this.DisplayAsync(this.control, this.y).ConfigureAwait(false);
+                    if (options.ShowRedo)
+                    {
+                        await this.DisplayAsync(this.control, this.y).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.Rename:
-                    await this.DisplayAsync(this.control, this.r, this.comma, this.control2, this.r2).ConfigureAwait(false);
+                    if (options.ShowRename)
+                    {
+                        await this.DisplayAsync(this.control, this.r, this.comma, this.control2, this.r2).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.Save:
-                    await this.DisplayAsync(this.control, this.s).ConfigureAwait(false);
+                    if (options.ShowSave)
+                    {
+                        await this.DisplayAsync(this.control, this.s).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.SelectAll:
-                    await this.DisplayAsync(this.control, this.a).ConfigureAwait(false);
+                    if (options.ShowSelectAll)
+                    {
+                        await this.DisplayAsync(this.control, this.a).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.SurroundWith:
-                    await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.s).ConfigureAwait(false);
+                    if (options.ShowSurroundWith)
+                    {
+                        await this.DisplayAsync(this.control, this.k, this.comma, this.control2, this.s).ConfigureAwait(false);
+                    }
+
                     break;
                 case SupportedCommand.Undo:
-                    await this.DisplayAsync(this.control, this.z).ConfigureAwait(false);
+                    if (options.ShowUndo)
+                    {
+                        await this.DisplayAsync(this.control, this.z).ConfigureAwait(false);
+                    }
+
+                    break;
+                case SupportedCommand.ViewCode:
+                    if (options.ShowViewCode)
+                    {
+                        await this.DisplayAsync(this.f7).ConfigureAwait(false);
+                    }
+
+                    break;
+                case SupportedCommand.ViewDesigner:
+                    if (options.ShowViewDesigner)
+                    {
+                        await this.DisplayAsync(this.shift, this.f7).ConfigureAwait(false);
+                    }
+
                     break;
                 default:
                     break;
@@ -158,6 +277,7 @@ namespace ShowKeys
             yield return this.x;
             yield return this.y;
             yield return this.z;
+            yield return this.f7;
             yield return this.shift;
             yield return this.tab;
             yield return this.alt;

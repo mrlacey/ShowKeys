@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidShowKeysPackage">
+
+    <Menus>
+      <Menu guid="guidShowKeysPackageCmdSet" id="ShowKeysMenu" type="Menu" priority="0x0700">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS" />
+        <Strings>
+          <ButtonText>Show Keys</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+
+    <Groups>
+      <Group guid="guidShowKeysPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="guidShowKeysPackageCmdSet" id="ShowKeysMenu" />
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidShowKeysPackageCmdSet" id="ToggleIfEnabledCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidShowKeysPackageCmdSet" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Toggle If Enabled</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidShowKeysPackageCmdSet" id="OptionsCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidShowKeysPackageCmdSet" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Options</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidShowKeysPackage" value="{03e205da-2ec4-4794-b66f-c6f1f09d17a0}" />
+
+    <GuidSymbol name="guidShowKeysPackageCmdSet" value="{b5f24a35-a66a-447f-8d56-d53b6fc8f3dc}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="ShowKeysMenu" value="0x1030" />
+      <IDSymbol name="ToggleIfEnabledCommandId" value="0x0100" />
+      <IDSymbol name="OptionsCommandId" value="0x0101" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

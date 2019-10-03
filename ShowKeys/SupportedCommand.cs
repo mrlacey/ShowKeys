@@ -30,5 +30,7 @@ namespace ShowKeys
         SelectAll,
         SurroundWith,
         Undo,
+        ViewCode,
+        ViewDesigner,
     }
 }
