@@ -48,7 +48,8 @@ namespace ShowKeys
         ICommandHandler<ContractSelectionCommandArgs>,
         ICommandHandler<CopyToInteractiveCommandArgs>,
         ICommandHandler<DocumentEndCommandArgs>,
-        ICommandHandler<DocumentStartCommandArgs>
+        ICommandHandler<DocumentStartCommandArgs>,
+        ICommandHandler<EncapsulateFieldCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
