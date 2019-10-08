@@ -60,6 +60,8 @@
     </Compile>
     <Compile Include="KeyPressAdornment.cs" />
     <Compile Include="KeyPressAdornmentTextViewCreationListener.cs" />
+    <Compile Include="KeySize.cs" />
+    <Compile Include="KeySizeExtensions.cs" />
     <Compile Include="OptionPageGrid.cs">
       <SubType>Component</SubType>
     </Compile>

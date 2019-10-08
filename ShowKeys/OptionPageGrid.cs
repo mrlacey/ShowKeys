@@ -22,7 +22,7 @@ namespace ShowKeys
         [Category("General")]
         [DisplayName("Keys Background")]
         [Description("The color to use for the key's background. Can be a named value or Hex (e.g. '#FF00FF')")]
-        public string Background { get; set; } = "Gray";
+        public string Background { get; set; } = "LightGray";
 
         [Category("General")]
         [DisplayName("Margin")]
@@ -30,9 +30,9 @@ namespace ShowKeys
         public double Margin { get; set; } = 10;
 
         [Category("General")]
-        [DisplayName("Opacity")]
-        [Description("Strength of opacity.")]
-        public double BorderOpacity { get; set; } = 0.8;
+        [DisplayName("Size")]
+        [Description("Size of the displayed keys.")]
+        public KeySize KeySize { get; set; } = KeySize.Medium;
 
         [Category("Show Commands")]
         [DisplayName("Cut")]

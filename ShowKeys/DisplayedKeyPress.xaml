@@ -4,14 +4,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:showkeys="clr-namespace:ShowKeys"
-    d:DesignHeight="100"
-    d:DesignWidth="2000"
+    Height="150"
+    d:DesignWidth="200"
     mc:Ignorable="d">
 
-    <StackPanel
-        x:Name="Container"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Bottom"
-        Orientation="Horizontal" />
+    <Viewbox
+        x:Name="Wrapper"
+        Height="60"
+        VerticalAlignment="Bottom">
+        <StackPanel
+            x:Name="Container"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Orientation="Horizontal" />
+    </Viewbox>
 </UserControl>

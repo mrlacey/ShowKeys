@@ -30,7 +30,7 @@ namespace ShowKeys
                 return;
             }
 
-            this.Container.Margin = new Thickness(options.Margin);
+            this.Wrapper.Margin = new Thickness(options.Margin);
 
             await this.DisplayAsync(options, keys).ConfigureAwait(false);
         }
@@ -56,6 +56,8 @@ namespace ShowKeys
 
             this.Container.Children.Clear();
             this.Container.Opacity = 0;
+
+            this.Wrapper.Height = 60 * options.KeySize.SizeToScaleFactor();
 
             foreach (var subgroup in keys)
             {
