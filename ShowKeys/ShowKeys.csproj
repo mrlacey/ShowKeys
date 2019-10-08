@@ -51,7 +51,9 @@
     <Compile Include="CombiningControl.xaml.cs">
       <DependentUpon>CombiningControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DisplayedKeyPress.xaml.cs" />
+    <Compile Include="DisplayedKeyPress.xaml.cs">
+      <DependentUpon>DisplayedKeyPress.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KeyControl.xaml.cs">
       <DependentUpon>KeyControl.xaml</DependentUpon>
     </Compile>
