@@ -46,9 +46,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(CutCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowCut)
+            if (options?.IsEnabled ?? false && options.ShowCut)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -64,9 +64,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(CopyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowCut)
+            if (options?.IsEnabled ?? false && options.ShowCut)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -82,9 +82,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(PasteCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowPaste)
+            if (options?.IsEnabled ?? false && options.ShowPaste)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -99,9 +99,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(EscapeKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowEscape)
+            if (options?.IsEnabled ?? false && options.ShowEscape)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -116,9 +116,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(TabKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowTab)
+            if (options?.IsEnabled ?? false && options.ShowTab)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -133,9 +133,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(BackTabKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowBackTab)
+            if (options?.IsEnabled ?? false && options.ShowBackTab)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -151,9 +151,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(PageDownKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowPageDown)
+            if (options?.IsEnabled ?? false && options.ShowPageDown)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -168,9 +168,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(PageUpKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowPageUp)
+            if (options?.IsEnabled ?? false && options.ShowPageUp)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -185,9 +185,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(DeleteKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowPageUp)
+            if (options?.IsEnabled ?? false && options.ShowPageUp)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -202,9 +202,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(CommentSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowCommentSelection)
+            if (options?.IsEnabled ?? false && options.ShowCommentSelection)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -220,9 +220,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(UncommentSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowUncommentSelection)
+            if (options?.IsEnabled ?? false && options.ShowUncommentSelection)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -238,9 +238,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(DuplicateSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowDuplicateSelection)
+            if (options?.IsEnabled ?? false && options.ShowDuplicateSelection)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -256,9 +256,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(FormatDocumentCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowFormatDocument)
+            if (options?.IsEnabled ?? false && options.ShowFormatDocument)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -274,9 +274,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(FormatSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowFormatSelection)
+            if (options?.IsEnabled ?? false && options.ShowFormatSelection)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -292,9 +292,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(InsertSnippetCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowInsertSnippet)
+            if (options?.IsEnabled ?? false && options.ShowInsertSnippet)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -310,9 +310,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(InvokeQuickInfoCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowInvokeQuickInfo)
+            if (options?.IsEnabled ?? false && options.ShowInvokeQuickInfo)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -328,9 +328,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(MoveSelectedLinesDownCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowMoveSelectedLineDown)
+            if (options?.IsEnabled ?? false && options.ShowMoveSelectedLineDown)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -346,9 +346,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(MoveSelectedLinesUpCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowMoveSelectedLineUp)
+            if (options?.IsEnabled ?? false && options.ShowMoveSelectedLineUp)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -364,9 +364,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(RedoCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowRedo)
+            if (options?.IsEnabled ?? false && options.ShowRedo)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -381,9 +381,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(RenameCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowRename)
+            if (options?.IsEnabled ?? false && options.ShowRename)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -399,9 +399,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(SaveCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowSave)
+            if (options?.IsEnabled ?? false && options.ShowSave)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -417,9 +417,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(SelectAllCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowSelectAll)
+            if (options?.IsEnabled ?? false && options.ShowSelectAll)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -435,9 +435,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(SurroundWithCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowSurroundWith)
+            if (options?.IsEnabled ?? false && options.ShowSurroundWith)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -453,9 +453,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(UndoCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowUndo)
+            if (options?.IsEnabled ?? false && options.ShowUndo)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -471,9 +471,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ViewCodeCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowViewCode)
+            if (options?.IsEnabled ?? false && options.ShowViewCode)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
@@ -488,9 +488,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ViewFormCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance.Options;
+            var options = ShowKeysPackage.Instance?.Options;
 
-            if (options.IsEnabled & options.ShowViewDesigner)
+            if (options?.IsEnabled ?? false && options.ShowViewDesigner)
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
