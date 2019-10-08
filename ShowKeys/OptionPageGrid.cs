@@ -79,35 +79,35 @@ namespace ShowKeys
         [Description("Show keys when the 'Delete' command is invoked.")]
         public bool ShowDelete { get; set; } = true;
 
-        [Category("Show Commands")]
-        [DisplayName("Uncomment Selection")]
-        [Description("Show keys when the 'Uncomment Selection' command is invoked.")]
-        public bool ShowUncommentSelection { get; set; } = true;
+        ////[Category("Show Commands")]
+        ////[DisplayName("Uncomment Selection")]
+        ////[Description("Show keys when the 'Uncomment Selection' command is invoked.")]
+        ////public bool ShowUncommentSelection { get; set; } = true;
 
-        [Category("Show Commands")]
-        [DisplayName("Comment Selection")]
-        [Description("Show keys when the 'Comment Selection' command is invoked.")]
-        public bool ShowCommentSelection { get; set; } = true;
+        ////[Category("Show Commands")]
+        ////[DisplayName("Comment Selection")]
+        ////[Description("Show keys when the 'Comment Selection' command is invoked.")]
+        ////public bool ShowCommentSelection { get; set; } = true;
 
-        [Category("Show Commands")]
-        [DisplayName("Duplicate Selection")]
-        [Description("Show keys when the 'Duplicate Selection' command is invoked.")]
-        public bool ShowDuplicateSelection { get; set; } = true;
+        ////[Category("Show Commands")]
+        ////[DisplayName("Duplicate Selection")]
+        ////[Description("Show keys when the 'Duplicate Selection' command is invoked.")]
+        ////public bool ShowDuplicateSelection { get; set; } = true;
 
-        [Category("Show Commands")]
-        [DisplayName("Format Selection")]
-        [Description("Show keys when the 'Format Selection' command is invoked.")]
-        public bool ShowFormatSelection { get; set; } = true;
+        ////[Category("Show Commands")]
+        ////[DisplayName("Format Selection")]
+        ////[Description("Show keys when the 'Format Selection' command is invoked.")]
+        ////public bool ShowFormatSelection { get; set; } = true;
 
-        [Category("Show Commands")]
-        [DisplayName("Format Document")]
-        [Description("Show keys when the 'Format Document' command is invoked.")]
-        public bool ShowFormatDocument { get; set; } = true;
+        ////[Category("Show Commands")]
+        ////[DisplayName("Format Document")]
+        ////[Description("Show keys when the 'Format Document' command is invoked.")]
+        ////public bool ShowFormatDocument { get; set; } = true;
 
-        [Category("Show Commands")]
-        [DisplayName("Insert Snippet")]
-        [Description("Show keys when the 'Insert Snippet' command is invoked.")]
-        public bool ShowInsertSnippet { get; set; } = true;
+        ////[Category("Show Commands")]
+        ////[DisplayName("Insert Snippet")]
+        ////[Description("Show keys when the 'Insert Snippet' command is invoked.")]
+        ////public bool ShowInsertSnippet { get; set; } = true;
 
         [Category("Show Commands")]
         [DisplayName("Invoke Quick Info")]
@@ -149,10 +149,10 @@ namespace ShowKeys
         [Description("Show keys when the 'Select All' command is invoked.")]
         public bool ShowSelectAll { get; set; } = true;
 
-        [Category("Show Commands")]
-        [DisplayName("Surround With")]
-        [Description("Show keys when the 'Surround With' command is invoked.")]
-        public bool ShowSurroundWith { get; set; } = true;
+        ////[Category("Show Commands")]
+        ////[DisplayName("Surround With")]
+        ////[Description("Show keys when the 'Surround With' command is invoked.")]
+        ////public bool ShowSurroundWith { get; set; } = true;
 
         [Category("Show Commands")]
         [DisplayName("View Code")]

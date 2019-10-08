@@ -18,7 +18,6 @@ Works with
 - Delete (Delete)
 - Page Up (PgUp)
 - Page Down (PgDown)
-- Duplicate Selection (Ctrl+D)
 - Invoke Quick Info (Ctrl+K, Ctrl+I)
 - Move Selected Lines Down (Alt+Down Arrow)
 - Move Selected Lines Up (Alt+Up Arrow)
@@ -36,6 +35,7 @@ For a list of all default shortcuts see the list on [docs.microsoft.com](https:/
 
 The following commands should work but don't because of a probable VS bug.
 
+- Duplicate Selection (Ctrl+D)
 - Insert Snippet (Ctrl+K, Ctrl+X)
 - Comment Selection (Ctrl+K, Ctrl+C)
 - Uncomment Selection (Ctrl+K, Ctrl+U)
