@@ -48,7 +48,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AnimationHelper.cs" />
+    <Compile Include="CombiningControl.xaml.cs">
+      <DependentUpon>CombiningControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DisplayedKeyPress.xaml.cs" />
+    <Compile Include="KeyControl.xaml.cs">
+      <DependentUpon>KeyControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KeyPressAdornment.cs" />
     <Compile Include="KeyPressAdornmentTextViewCreationListener.cs" />
     <Compile Include="OptionPageGrid.cs">
@@ -108,9 +114,17 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CombiningControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DisplayedKeyPress.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KeyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

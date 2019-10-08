@@ -37,7 +37,16 @@ namespace ShowKeys
             // Clear the adornment layer of previous adornments
             this.adornmentLayer.RemoveAllAdornments();
 
-            Canvas.SetTop(root, this.view.ViewportBottom - root.ActualHeight);
+            var margin = ShowKeysPackage.Instance?.Options?.Margin ?? 10;
+
+            var controlHeight = root.ActualHeight;
+
+            if (controlHeight < 10 || double.IsNaN(controlHeight))
+            {
+                controlHeight = 50;  // Default control height
+            }
+
+            Canvas.SetTop(root, this.view.ViewportBottom - controlHeight - (margin * 2)); // Double the margin for top and botom
             Canvas.SetLeft(root, (this.view.ViewportRight / 2) - 50);
 
             // Add to the adornment layer and make it relative to the viewport
