@@ -44,7 +44,8 @@ namespace ShowKeys
         ICommandHandler<AutomaticLineEnderCommandArgs>,
         ICommandHandler<CodeCleanUpCommandArgs>,
         ICommandHandler<CollapseTagCommandArgs>,
-        ICommandHandler<CommitUniqueCompletionListItemCommandArgs>
+        ICommandHandler<CommitUniqueCompletionListItemCommandArgs>,
+        ICommandHandler<ContractSelectionCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -533,6 +534,12 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(ContractSelectionCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** ContractSelectionCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -598,6 +605,11 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(CommitUniqueCompletionListItemCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(ContractSelectionCommandArgs args)
         {
             return CommandState.Unspecified;
         }
