@@ -12,45 +12,5 @@
     <StackPanel
         x:Name="Container"
         HorizontalAlignment="Center"
-        Orientation="Horizontal">
-        <StackPanel x:Name="control" Orientation="Horizontal">
-            <showkeys:KeyControl KeyText="Ctrl" />
-            <showkeys:CombiningControl CombiningText="+" />
-        </StackPanel>
-        <showkeys:KeyControl x:Name="k" KeyText="K" />
-        <showkeys:KeyControl x:Name="r" KeyText="R" />
-        <showkeys:CombiningControl x:Name="comma" CombiningText="," />
-        <StackPanel x:Name="control2" Orientation="Horizontal">
-            <showkeys:KeyControl KeyText="Ctrl" />
-            <showkeys:CombiningControl CombiningText="+" />
-        </StackPanel>
-        <showkeys:KeyControl x:Name="a" KeyText="A" />
-        <showkeys:KeyControl x:Name="c" KeyText="C" />
-        <showkeys:KeyControl x:Name="d" KeyText="D" />
-        <showkeys:KeyControl x:Name="f" KeyText="F" />
-        <showkeys:KeyControl x:Name="i" KeyText="I" />
-        <showkeys:KeyControl x:Name="r2" KeyText="R" />
-        <showkeys:KeyControl x:Name="s" KeyText="S" />
-        <showkeys:KeyControl x:Name="u" KeyText="U" />
-        <showkeys:KeyControl x:Name="v" KeyText="V" />
-        <showkeys:KeyControl x:Name="x" KeyText="X" />
-        <showkeys:KeyControl x:Name="y" KeyText="Y" />
-        <showkeys:KeyControl x:Name="z" KeyText="Z" />
-        <StackPanel x:Name="shift" Orientation="Horizontal">
-            <showkeys:KeyControl KeyText="↑" />
-            <showkeys:CombiningControl CombiningText="+" />
-        </StackPanel>
-        <showkeys:KeyControl x:Name="f7" KeyText="F7" />
-        <showkeys:KeyControl x:Name="tab" KeyText="Tab" />
-        <StackPanel x:Name="alt" Orientation="Horizontal">
-            <showkeys:KeyControl KeyText="Alt" />
-            <showkeys:CombiningControl CombiningText="+" />
-        </StackPanel>
-        <showkeys:KeyControl x:Name="delete" KeyText="Del" />
-        <showkeys:KeyControl x:Name="escape" KeyText="Esc" />
-        <showkeys:KeyControl x:Name="pageUp" KeyText="PgUp" />
-        <showkeys:KeyControl x:Name="pageDown" KeyText="PgDn" />
-        <showkeys:KeyControl x:Name="upArrow" KeyText="▲" />
-        <showkeys:KeyControl x:Name="downArrow" KeyText="▼" />
-    </StackPanel>
+        Orientation="Horizontal" />
 </UserControl>
