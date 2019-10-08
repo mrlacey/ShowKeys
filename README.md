@@ -19,7 +19,6 @@ Works with
 - Page Up (PgUp)
 - Page Down (PgDown)
 - Duplicate Selection (Ctrl+D)
-- Insert Snippet (Ctrl+K, Ctrl+X)
 - Invoke Quick Info (Ctrl+K, Ctrl+I)
 - Move Selected Lines Down (Alt+Down Arrow)
 - Move Selected Lines Up (Alt+Up Arrow)
@@ -28,7 +27,6 @@ Works with
 - Rename (Ctrl+R, Ctrl+R)
 - Save (Ctrl+S)
 - Select All (Ctrl+A)
-- Surround With (Ctrl+K, Ctrl+S)
 - View Code (F7)
 - View Form Designer (Shift+F7)
 
@@ -38,9 +36,11 @@ For a list of all default shortcuts see the list on [docs.microsoft.com](https:/
 
 The following commands should work but don't because of a probable VS bug.
 
+- Insert Snippet (Ctrl+K, Ctrl+X)
 - Comment Selection (Ctrl+K, Ctrl+C)
 - Uncomment Selection (Ctrl+K, Ctrl+U)
 - Format Document (Ctrl+K, Ctrl+D)
 - Format Selection (Ctrl+K, Ctrl+F)
+- Surround With (Ctrl+K, Ctrl+S)
 
 -->
