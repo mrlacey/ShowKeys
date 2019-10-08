@@ -40,7 +40,8 @@ namespace ShowKeys
         ICommandHandler<SurroundWithCommandArgs>,
         ICommandHandler<UndoCommandArgs>,
         ICommandHandler<ViewCodeCommandArgs>,
-        ICommandHandler<ViewFormCommandArgs>
+        ICommandHandler<ViewFormCommandArgs>,
+        ICommandHandler<AutomaticLineEnderCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -505,6 +506,12 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(AutomaticLineEnderCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** AutomaticLineEnderCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -556,5 +563,7 @@ namespace ShowKeys
         public CommandState GetCommandState(ViewCodeCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(ViewFormCommandArgs args) => CommandState.Unspecified;
+
+        public CommandState GetCommandState(AutomaticLineEnderCommandArgs args) => CommandState.Unspecified;
     }
 }
