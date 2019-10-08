@@ -18,6 +18,18 @@ namespace ShowKeys
             this.InitializeComponent();
         }
 
+        public async Task ShowAsync(OptionPageGrid options, params Keys[][] keys)
+        {
+            if (!options?.IsEnabled ?? false)
+            {
+                return;
+            }
+
+            this.Container.Margin = new Thickness(options.Margin);
+
+            await this.DisplayAsync(keys).ConfigureAwait(false);
+        }
+
         public async Task ShowAsync(SupportedCommand cmd)
         {
             var options = ShowKeysPackage.Instance.Options;
@@ -223,8 +235,6 @@ namespace ShowKeys
             var requestId = Guid.NewGuid();
             lastRequest = requestId;
 
-            var keyConverter = new KeysConverter();
-
             this.Container.Children.Clear();
             this.Container.Opacity = 0;
 
@@ -246,7 +256,7 @@ namespace ShowKeys
 
                     this.Container.Children.Add(new KeyControl
                     {
-                        KeyText = keyConverter.ConvertToInvariantString(key),
+                        KeyText = key.ToString(),
                     });
 
                     firstInGroup = false;
