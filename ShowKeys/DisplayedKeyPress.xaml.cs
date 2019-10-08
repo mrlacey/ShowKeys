@@ -35,6 +35,20 @@ namespace ShowKeys
             await this.DisplayAsync(keys).ConfigureAwait(false);
         }
 
+        private string GetKeyName(Keys key)
+        {
+            switch (key)
+            {
+                // PageDown and Next are treated the same
+                // case Keys.PageDown:
+                case Keys.Next:
+                    return nameof(Keys.PageDown);
+
+                default:
+                    return key.ToString();
+            }
+        }
+
         private async Task DisplayAsync(params Keys[][] keys)
         {
             var requestId = Guid.NewGuid();
@@ -61,7 +75,7 @@ namespace ShowKeys
 
                     this.Container.Children.Add(new KeyControl
                     {
-                        KeyText = key.ToString(),
+                        KeyText = this.GetKeyName(key),
                     });
 
                     firstInGroup = false;
