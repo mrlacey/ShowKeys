@@ -72,7 +72,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ShowKeysPackage.vsct</DependentUpon>
     </Compile>
-    <Compile Include="SupportedCommand.cs" />
     <Compile Include="ToggleIfEnabledCommand.cs" />
     <Compile Include="VSPackage.Designer.cs">
       <AutoGen>True</AutoGen>

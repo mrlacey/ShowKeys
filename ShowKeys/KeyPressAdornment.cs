@@ -9,8 +9,6 @@ namespace ShowKeys
 {
     internal sealed class KeyPressAdornment
     {
-        private static DisplayedKeyPress root;
-
         private readonly IWpfTextView view;
 
         private readonly IAdornmentLayer adornmentLayer;
@@ -20,7 +18,7 @@ namespace ShowKeys
             Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
 
             this.view = view;
-            root = new DisplayedKeyPress();
+            DisplayedInstance = new DisplayedKeyPress();
 
             this.adornmentLayer = view.GetAdornmentLayer("KeyPressAdornment");
 
@@ -28,7 +26,7 @@ namespace ShowKeys
             this.view.ViewportWidthChanged += (sender, e) => { this.RefreshAdornment(); };
         }
 
-        public static DisplayedKeyPress DisplayedInstance => root;
+        public static DisplayedKeyPress DisplayedInstance { get; private set; }
 
         private void RefreshAdornment()
         {
@@ -39,18 +37,18 @@ namespace ShowKeys
 
             var margin = ShowKeysPackage.Instance?.Options?.Margin ?? 10;
 
-            var controlHeight = root.ActualHeight;
+            var controlHeight = DisplayedInstance.ActualHeight;
 
             if (controlHeight < 10 || double.IsNaN(controlHeight))
             {
-                controlHeight = 50;  // Default control height
+                controlHeight = 60;  // Default control height
             }
 
-            Canvas.SetTop(root, this.view.ViewportBottom - controlHeight - (margin * 2)); // Double the margin for top and botom
-            Canvas.SetLeft(root, (this.view.ViewportRight / 2) - 50);
+            Canvas.SetTop(DisplayedInstance, this.view.ViewportBottom - controlHeight - (margin * 2)); // Double the margin for top and botom
+            Canvas.SetLeft(DisplayedInstance, (this.view.ViewportRight / 2) - 64); // Approximate the center
 
             // Add to the adornment layer and make it relative to the viewport
-            this.adornmentLayer.AddAdornment(AdornmentPositioningBehavior.ViewportRelative, null, null, root, null);
+            this.adornmentLayer.AddAdornment(AdornmentPositioningBehavior.ViewportRelative, null, null, DisplayedInstance, null);
         }
     }
 }

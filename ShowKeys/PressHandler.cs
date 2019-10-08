@@ -3,6 +3,7 @@
 // </copyright>
 
 using System.ComponentModel.Composition;
+using System.Windows.Forms;
 using Microsoft.VisualStudio.Commanding;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Text.Editor.Commanding.Commands;
@@ -45,235 +46,461 @@ namespace ShowKeys
 
         public bool ExecuteCommand(CutCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowCut)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.Cut).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Control,
+                        Keys.X).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(CopyCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowCut)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.Copy).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Control,
+                        Keys.C).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(PasteCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowPaste)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.Paste).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.V }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(EscapeKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowEscape)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.Escape).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Escape }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(TabKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowTab)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.Tab).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Tab }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(BackTabKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowBackTab)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.PageDown).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Shift,
+                        Keys.Tab).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(PageDownKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowPageDown)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.PageDown).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.PageDown).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(PageUpKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowPageUp)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.PageUp).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.PageUp).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(DeleteKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowPageUp)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.Delete).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Delete).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(CommentSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowCommentSelection)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.CommentSelection).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.K },
+                        new[] { Keys.Control, Keys.C }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(UncommentSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowUncommentSelection)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.UncommentSelection).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.K },
+                        new[] { Keys.Control, Keys.U }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(DuplicateSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowDuplicateSelection)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.DuplicateSelection).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Control,
+                        Keys.D).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(FormatDocumentCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowFormatDocument)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.FormatDocument).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.K },
+                        new[] { Keys.Control, Keys.D }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(FormatSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowFormatSelection)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.FormatSelection).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.K },
+                        new[] { Keys.Control, Keys.F }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(InsertSnippetCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowInsertSnippet)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.InsertSnippet).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.K },
+                        new[] { Keys.Control, Keys.X }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(InvokeQuickInfoCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowInvokeQuickInfo)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.InvokeQuickInfo).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.K },
+                        new[] { Keys.Control, Keys.I }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(MoveSelectedLinesDownCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowMoveSelectedLineDown)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.MoveSelectedLineDown).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Alt,
+                        Keys.Down).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(MoveSelectedLinesUpCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowMoveSelectedLineUp)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.MoveSelectedLineUp).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Alt,
+                        Keys.Up).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(RedoCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowRedo)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.Redo).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(options,
+                        Keys.Control,
+                        Keys.Y).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(RenameCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowRename)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.Rename).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.R },
+                        new[] { Keys.Control, Keys.R }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(SaveCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowSave)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.Save).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Control,
+                        Keys.S).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(SelectAllCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowSelectAll)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.SelectAll).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Control,
+                        Keys.A).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(SurroundWithCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowSurroundWith)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.SurroundWith).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.K },
+                        new[] { Keys.Control, Keys.S }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(UndoCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowUndo)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.Undo).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Control,
+                        Keys.Z).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(ViewCodeCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowViewCode)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.ViewCode).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.F7).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(ViewFormCommandArgs args, CommandExecutionContext executionContext)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            var options = ShowKeysPackage.Instance.Options;
+
+            if (options.IsEnabled & options.ShowViewDesigner)
             {
-                await KeyPressAdornment.DisplayedInstance.ShowAsync(SupportedCommand.ViewDesigner).ConfigureAwait(false);
-            });
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Shift,
+                        Keys.F7).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
