@@ -12,5 +12,6 @@
     <StackPanel
         x:Name="Container"
         HorizontalAlignment="Center"
+        VerticalAlignment="Bottom"
         Orientation="Horizontal" />
 </UserControl>

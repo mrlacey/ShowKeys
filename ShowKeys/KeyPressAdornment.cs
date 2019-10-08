@@ -45,7 +45,10 @@ namespace ShowKeys
             }
 
             Canvas.SetTop(DisplayedInstance, this.view.ViewportBottom - controlHeight - (margin * 2)); // Double the margin for top and botom
-            Canvas.SetLeft(DisplayedInstance, (this.view.ViewportRight / 2) - 64); // Approximate the center
+
+            // Put it on the left, allow alignment to center
+            Canvas.SetLeft(DisplayedInstance, 0);
+            DisplayedInstance.Width = this.view.ViewportWidth;
 
             // Add to the adornment layer and make it relative to the viewport
             this.adornmentLayer.AddAdornment(AdornmentPositioningBehavior.ViewportRelative, null, null, DisplayedInstance, null);
