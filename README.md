@@ -18,15 +18,7 @@ Works with
 - Delete (Delete)
 - Page Up (PgUp)
 - Page Down (PgDown)
-
--- Comment Selection (Ctrl+K, Ctrl+C)
--- Uncomment Selection (Ctrl+K, Ctrl+U)
-
 - Duplicate Selection (Ctrl+D)
-
--- Format Document (Ctrl+K, Ctrl+D)
--- Format Selection (Ctrl+K, Ctrl+F)
-
 - Insert Snippet (Ctrl+K, Ctrl+X)
 - Invoke Quick Info (Ctrl+K, Ctrl+I)
 - Move Selected Lines Down (Alt+Down Arrow)
@@ -41,3 +33,14 @@ Works with
 - View Form Designer (Shift+F7)
 
 For a list of all default shortcuts see the list on [docs.microsoft.com](https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2019).
+
+<!--
+
+The following commands should work but don't because of a probable VS bug.
+
+- Comment Selection (Ctrl+K, Ctrl+C)
+- Uncomment Selection (Ctrl+K, Ctrl+U)
+- Format Document (Ctrl+K, Ctrl+D)
+- Format Selection (Ctrl+K, Ctrl+F)
+
+-->
