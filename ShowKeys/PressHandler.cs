@@ -41,7 +41,8 @@ namespace ShowKeys
         ICommandHandler<UndoCommandArgs>,
         ICommandHandler<ViewCodeCommandArgs>,
         ICommandHandler<ViewFormCommandArgs>,
-        ICommandHandler<AutomaticLineEnderCommandArgs>
+        ICommandHandler<AutomaticLineEnderCommandArgs>,
+        ICommandHandler<CodeCleanUpCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -512,6 +513,12 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(CodeCleanUpCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** CodeCleanUpCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -565,5 +572,10 @@ namespace ShowKeys
         public CommandState GetCommandState(ViewFormCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(AutomaticLineEnderCommandArgs args) => CommandState.Unspecified;
+
+        public CommandState GetCommandState(CodeCleanUpCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
     }
 }
