@@ -42,7 +42,8 @@ namespace ShowKeys
         ICommandHandler<ViewCodeCommandArgs>,
         ICommandHandler<ViewFormCommandArgs>,
         ICommandHandler<AutomaticLineEnderCommandArgs>,
-        ICommandHandler<CodeCleanUpCommandArgs>
+        ICommandHandler<CodeCleanUpCommandArgs>,
+        ICommandHandler<CollapseTagCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -519,6 +520,12 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(CollapseTagCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** CollapseTagCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -574,6 +581,11 @@ namespace ShowKeys
         public CommandState GetCommandState(AutomaticLineEnderCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CodeCleanUpCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(CollapseTagCommandArgs args)
         {
             return CommandState.Unspecified;
         }
