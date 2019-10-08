@@ -50,7 +50,8 @@ namespace ShowKeys
         ICommandHandler<DocumentEndCommandArgs>,
         ICommandHandler<DocumentStartCommandArgs>,
         ICommandHandler<EncapsulateFieldCommandArgs>,
-        ICommandHandler<ErrorCommandArgsBase>
+        ICommandHandler<ErrorCommandArgsBase>,
+        ICommandHandler<ExecuteInInteractiveCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -575,6 +576,12 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(ExecuteInInteractiveCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** ExecuteInInteractiveCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -670,6 +677,11 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(ErrorCommandArgsBase args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(ExecuteInInteractiveCommandArgs args)
         {
             return CommandState.Unspecified;
         }
