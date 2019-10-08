@@ -31,6 +31,14 @@ Works with
 
 For a list of all default shortcuts see the list on [docs.microsoft.com](https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2019).
 
+## FAQs
+
+**Why are so few commands supported?**
+Only those commands that are exposed via by Visual Studio to the extensibility model are shown. Sorry.
+
+**Why are the default shortcuts shown rather than what was pressed?**
+The purpose of displaying the keys is to help anyone viewing to understand what you did. By showing the default shortcut combinations it is hoped that this will enable others to also use the shortcuts.
+
 <!--
 
 The following commands should work but don't because of a probable VS bug.
