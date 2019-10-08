@@ -370,7 +370,8 @@ namespace ShowKeys
             {
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(options,
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
                         Keys.Control,
                         Keys.Y).ConfigureAwait(false);
                 });

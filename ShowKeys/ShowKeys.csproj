@@ -48,6 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AnimationHelper.cs" />
+    <Compile Include="ColorHelper.cs" />
     <Compile Include="CombiningControl.xaml.cs">
       <DependentUpon>CombiningControl.xaml</DependentUpon>
     </Compile>

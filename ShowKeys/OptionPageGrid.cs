@@ -17,7 +17,7 @@ namespace ShowKeys
         [Category("General")]
         [DisplayName("Keys Foreground")]
         [Description("The color to use for the text. Can be a named value or Hex (e.g. '#FF00FF')")]
-        public string Forground { get; set; } = "Black";
+        public string Foreground { get; set; } = "Black";
 
         [Category("General")]
         [DisplayName("Keys Background")]

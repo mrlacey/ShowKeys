@@ -32,10 +32,10 @@ namespace ShowKeys
 
             this.Container.Margin = new Thickness(options.Margin);
 
-            await this.DisplayAsync(keys).ConfigureAwait(false);
+            await this.DisplayAsync(options, keys).ConfigureAwait(false);
         }
 
-        private string GetKeyName(Keys key)
+        private static string GetKeyName(Keys key)
         {
             switch (key)
             {
@@ -49,7 +49,7 @@ namespace ShowKeys
             }
         }
 
-        private async Task DisplayAsync(params Keys[][] keys)
+        private async Task DisplayAsync(OptionPageGrid options, params Keys[][] keys)
         {
             var requestId = Guid.NewGuid();
             lastRequest = requestId;
@@ -61,7 +61,11 @@ namespace ShowKeys
             {
                 if (this.Container.Children.Count > 0)
                 {
-                    this.Container.Children.Add(new CombiningControl { CombiningText = ", " });
+                    this.Container.Children.Add(new CombiningControl
+                    {
+                        CombiningText = ", ",
+                        CombiningForeground = ColorHelper.GetColor(options.Foreground),
+                    });
                 }
 
                 var firstInGroup = true;
@@ -70,12 +74,18 @@ namespace ShowKeys
                 {
                     if (!firstInGroup)
                     {
-                        this.Container.Children.Add(new CombiningControl { CombiningText = "+" });
+                        this.Container.Children.Add(new CombiningControl
+                        {
+                            CombiningText = "+",
+                            CombiningForeground = ColorHelper.GetColor(options.Foreground),
+                        });
                     }
 
                     this.Container.Children.Add(new KeyControl
                     {
-                        KeyText = this.GetKeyName(key),
+                        KeyText = GetKeyName(key),
+                        KeyBackground = ColorHelper.GetColor(options.Background),
+                        KeyForeground = ColorHelper.GetColor(options.Foreground),
                     });
 
                     firstInGroup = false;
