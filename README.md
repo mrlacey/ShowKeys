@@ -42,6 +42,9 @@ Only those commands that are exposed via by Visual Studio to the extensibility m
 **Why are the default shortcuts shown rather than what was pressed?**
 The purpose of displaying the keys is to help anyone viewing to understand what you did. By showing the default shortcut combinations it is hoped that this will enable others to also use the shortcuts.
 
+**Why are some commands only shown for some file types?**
+This is a limitation of Visual Studio extensibility. If you have specific examples of commands that don't work for specific file types, please raise an issue and I'll investigate if it's possible to do anything about it.
+
 <!--
 
 The following commands should work but don't because of a probable VS bug.
