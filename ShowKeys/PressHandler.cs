@@ -95,12 +95,10 @@ namespace ShowKeys
         ICommandHandler<RotatePrimaryCaretPreviousCommandArgs>,
         ICommandHandler<SelectContainingDeclarationCommandArgs>,
         ICommandHandler<ShowClipboardHistoryCommandArgs>,
-        ICommandHandler<ShowContextMenuCommandArgs>,
         ICommandHandler<ShowNavigateMenuCommandArgs>,
         ICommandHandler<StartAutomaticOutliningCommandArgs>,
         ICommandHandler<SyncClassViewCommandArgs>,
         ICommandHandler<ToggleCompletionModeCommandArgs>,
-        ICommandHandler<TypeCharCommandArgs>,
         ICommandHandler<UncollapseTagCommandArgs>,
         ICommandHandler<ViewCallHierarchyCommandArgs>,
         ICommandHandler<WordDeleteToEndCommandArgs>,
@@ -893,12 +891,6 @@ namespace ShowKeys
             return false;
         }
 
-        public bool ExecuteCommand(ShowContextMenuCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** ShowContextMenuCommandArgs");
-            return false;
-        }
-
         public bool ExecuteCommand(ShowNavigateMenuCommandArgs args, CommandExecutionContext executionContext)
         {
             System.Diagnostics.Debug.WriteLine("*** ShowNavigateMenuCommandArgs");
@@ -920,12 +912,6 @@ namespace ShowKeys
         public bool ExecuteCommand(ToggleCompletionModeCommandArgs args, CommandExecutionContext executionContext)
         {
             System.Diagnostics.Debug.WriteLine("*** ToggleCompletionModeCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(TypeCharCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** TypeCharCommandArgs");
             return false;
         }
 
@@ -1272,11 +1258,6 @@ namespace ShowKeys
             return CommandState.Unspecified;
         }
 
-        public CommandState GetCommandState(ShowContextMenuCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
         public CommandState GetCommandState(ShowNavigateMenuCommandArgs args)
         {
             return CommandState.Unspecified;
@@ -1293,11 +1274,6 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(ToggleCompletionModeCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(TypeCharCommandArgs args)
         {
             return CommandState.Unspecified;
         }
