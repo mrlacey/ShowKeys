@@ -68,7 +68,9 @@ namespace ShowKeys
         ICommandHandler<InsertCommentCommandArgs>,
         ICommandHandler<InsertNextMatchingCaretCommandArgs>,
         ICommandHandler<InvokeCompletionListCommandArgs>,
-        ICommandHandler<InvokeSignatureHelpCommandArgs>
+        ICommandHandler<InvokeSignatureHelpCommandArgs>,
+        ICommandHandler<LineEndCommandArgs>,
+        ICommandHandler<LineEndExtendCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -701,6 +703,18 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(LineEndCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** LineEndCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(LineEndExtendCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** LineEndExtendCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -886,6 +900,16 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(InvokeSignatureHelpCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(LineEndCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(LineEndExtendCommandArgs args)
         {
             return CommandState.Unspecified;
         }
