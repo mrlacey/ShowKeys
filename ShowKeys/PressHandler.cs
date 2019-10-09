@@ -11,28 +11,29 @@ using Microsoft.VisualStudio.Text.Editor.Commanding.Commands;
 using Microsoft.VisualStudio.Utilities;
 
 namespace ShowKeys
-{
+{    
     // Multiple content types are specified to try and capture more scenarios
     // as other handlers may suppress or intercept requests.
-    [Export(typeof(ICommandHandler))]
-    [ContentType("any")]
-    [ContentType("text")]
-    [ContentType("Basic")]
-    [ContentType("CSharp")]
-    [ContentType("F#")]
-    [ContentType("xml")]
-    [ContentType("XAML")]
-    [ContentType("CSS")]
-    [ContentType("HTML")]
-    [ContentType("JScript")]
-    [ContentType("TypeScript")]
-    [ContentType("Python")]
-    [ContentType("Java")]
-    [Name("ShowKeys command listener")]
-    [TextViewRole(PredefinedTextViewRoles.PrimaryDocument)]
-    [TextViewRole(PredefinedTextViewRoles.Editable)]
-    [TextViewRole(PredefinedTextViewRoles.EmbeddedPeekTextView)]
-    internal class PressHandler :
+    //[Export(typeof(ICommandHandler))]
+    //[ContentType("any")]
+    //[ContentType("text")]
+    //[ContentType("Basic")]
+    //[ContentType("CSharp")]
+    //[ContentType("F#")]
+    //[ContentType("C/C++")]
+    //[ContentType("xml")]
+    //[ContentType("XAML")]
+    //[ContentType("CSS")]
+    //[ContentType("HTML")]
+    //[ContentType("JScript")]
+    //[ContentType("TypeScript")]
+    //[ContentType("Python")]
+    //[ContentType("Java")]
+    //[Name("ShowKeys command listener")]
+    ////[TextViewRole(PredefinedTextViewRoles.PrimaryDocument)]
+    ////[TextViewRole(PredefinedTextViewRoles.Editable)]
+    ////[TextViewRole(PredefinedTextViewRoles.EmbeddedPeekTextView)]
+    public class PressHandler :
         ICommandHandler<CutCommandArgs>,
         ICommandHandler<CopyCommandArgs>,
         ICommandHandler<PasteCommandArgs>,
@@ -1361,4 +1362,24 @@ namespace ShowKeys
             return CommandState.Unspecified;
         }
     }
+
+    [Export(typeof(ICommandHandler))]
+    [ContentType("CSharp")]
+    [Name(nameof(CSharpPressHandler))]
+    internal class CSharpPressHandler : PressHandler
+    {
+        //public string DisplayName => throw new System.NotImplementedException();
+
+        //public bool ExecuteCommand(GoToDefinitionCommandArgs args, CommandExecutionContext executionContext)
+        //{
+        //    System.Diagnostics.Debug.WriteLine("GoToDefinitionCommandArgs");
+        //    return false;
+        //}
+
+        //public CommandState GetCommandState(GoToDefinitionCommandArgs args)
+        //{
+        //    return CommandState.Available;
+        //}
+    }
+
 }

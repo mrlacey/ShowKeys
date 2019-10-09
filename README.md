@@ -14,6 +14,7 @@ Works with
 - Cut (Ctrl+X)
 - Delete (Delete)
 - Escape (Escape)
+- Go To Definition (F12)
 - Invoke Quick Info (Ctrl+K, Ctrl+I)
 - Left (Left Arrow)
 - Move Selected Lines Down (Alt+Down Arrow)

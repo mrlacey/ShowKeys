@@ -178,5 +178,10 @@ namespace ShowKeys
         [DisplayName("Return")]
         [Description("Show keys when the 'Return' (or 'Enter') button is pressed.")]
         public bool ShowReturn { get; set; } = false;
+
+        [Category("Show Commands")]
+        [DisplayName("Go To Definition")]
+        [Description("Show keys when the 'Go To Definition' command is invoked.")]
+        public bool ShowGoToDefinition { get; set; } = true;
     }
 }
