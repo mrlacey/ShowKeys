@@ -163,5 +163,20 @@ namespace ShowKeys
         [DisplayName("View Designer")]
         [Description("Show keys when the 'View Designer' command is invoked.")]
         public bool ShowViewDesigner { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Left")]
+        [Description("Show keys when the 'Left' button is pressed.")]
+        public bool ShowLeft { get; set; } = false;
+
+        [Category("Show Commands")]
+        [DisplayName("Right")]
+        [Description("Show keys when the 'Right' button is pressed.")]
+        public bool ShowRight { get; set; } = false;
+
+        [Category("Show Commands")]
+        [DisplayName("Return")]
+        [Description("Show keys when the 'Return' (or 'Enter') button is pressed.")]
+        public bool ShowReturn { get; set; } = false;
     }
 }

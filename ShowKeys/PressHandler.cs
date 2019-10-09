@@ -851,19 +851,52 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ReturnKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ReturnKeyCommandArgs");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowReturn)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Enter).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(LeftKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** LeftKeyCommandArgs");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowLeft)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Left).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(RightKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** RightKeyCommandArgs");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowRight)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Right).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
