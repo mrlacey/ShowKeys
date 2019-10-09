@@ -63,7 +63,8 @@ namespace ShowKeys
         ICommandHandler<GoToDefinitionCommandArgs>,
         ICommandHandler<GoToNextMemberCommandArgs>,
         ICommandHandler<GoToPreviousMemberCommandArgs>,
-        ICommandHandler<HelpCommandArgs>
+        ICommandHandler<HelpCommandArgs>,
+        ICommandHandler<InsertAllMatchingCaretsCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -666,6 +667,12 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(InsertAllMatchingCaretsCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** InsertAllMatchingCaretsCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -826,6 +833,11 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(HelpCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(InsertAllMatchingCaretsCommandArgs args)
         {
             return CommandState.Unspecified;
         }
