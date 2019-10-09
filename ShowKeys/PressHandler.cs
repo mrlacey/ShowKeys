@@ -55,7 +55,8 @@ namespace ShowKeys
         ICommandHandler<ExpandSelectionCommandArgs>,
         ICommandHandler<ExtractInterfaceCommandArgs>,
         ICommandHandler<ExtractMethodCommandArgs>,
-        ICommandHandler<FindReferencesCommandArgs>
+        ICommandHandler<FindReferencesCommandArgs>,
+        ICommandHandler<FormatAndValidationCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -610,6 +611,12 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(FormatAndValidationCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** FormatAndValidationCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -730,6 +737,11 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(FindReferencesCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(FormatAndValidationCommandArgs args)
         {
             return CommandState.Unspecified;
         }
