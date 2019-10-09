@@ -60,7 +60,9 @@ namespace ShowKeys
         ICommandHandler<GotoBraceCommandArgs>,
         ICommandHandler<GotoBraceExtCommandArgs>,
         ICommandHandler<GoToContainingDeclarationCommandArgs>,
-        ICommandHandler<GoToDefinitionCommandArgs>
+        ICommandHandler<GoToDefinitionCommandArgs>,
+        ICommandHandler<GoToNextMemberCommandArgs>,
+        ICommandHandler<GoToPreviousMemberCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -645,6 +647,18 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(GoToNextMemberCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** GoToNextMemberCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(GoToPreviousMemberCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** GoToPreviousMemberCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -790,6 +804,16 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(GoToDefinitionCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(GoToNextMemberCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(GoToPreviousMemberCommandArgs args)
         {
             return CommandState.Unspecified;
         }
