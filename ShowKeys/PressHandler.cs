@@ -72,7 +72,8 @@ namespace ShowKeys
         ICommandHandler<LineEndCommandArgs>,
         ICommandHandler<LineEndExtendCommandArgs>,
         ICommandHandler<LineStartCommandArgs>,
-        ICommandHandler<LineStartExtendCommandArgs>
+        ICommandHandler<LineStartExtendCommandArgs>,
+        ICommandHandler<MoveLastCaretDownCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -719,12 +720,20 @@ namespace ShowKeys
 
         public bool ExecuteCommand(LineStartCommandArgs args, CommandExecutionContext executionContext)
         {
-            throw new System.NotImplementedException();
+            System.Diagnostics.Debug.WriteLine("*** LineStartCommandArgs");
+            return false;
         }
 
         public bool ExecuteCommand(LineStartExtendCommandArgs args, CommandExecutionContext executionContext)
         {
-            throw new System.NotImplementedException();
+            System.Diagnostics.Debug.WriteLine("*** LineStartExtendCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(MoveLastCaretDownCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** MoveLastCaretDownCommandArgs");
+            return false;
         }
 
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
@@ -928,12 +937,17 @@ namespace ShowKeys
 
         public CommandState GetCommandState(LineStartCommandArgs args)
         {
-            throw new System.NotImplementedException();
+            return CommandState.Unspecified;
         }
 
         public CommandState GetCommandState(LineStartExtendCommandArgs args)
         {
-            throw new System.NotImplementedException();
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(MoveLastCaretDownCommandArgs args)
+        {
+            return CommandState.Unspecified;
         }
     }
 }
