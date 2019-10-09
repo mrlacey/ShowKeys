@@ -70,7 +70,9 @@ namespace ShowKeys
         ICommandHandler<InvokeCompletionListCommandArgs>,
         ICommandHandler<InvokeSignatureHelpCommandArgs>,
         ICommandHandler<LineEndCommandArgs>,
-        ICommandHandler<LineEndExtendCommandArgs>
+        ICommandHandler<LineEndExtendCommandArgs>,
+        ICommandHandler<LineStartCommandArgs>,
+        ICommandHandler<LineStartExtendCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -715,6 +717,16 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(LineStartCommandArgs args, CommandExecutionContext executionContext)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool ExecuteCommand(LineStartExtendCommandArgs args, CommandExecutionContext executionContext)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -912,6 +924,16 @@ namespace ShowKeys
         public CommandState GetCommandState(LineEndExtendCommandArgs args)
         {
             return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(LineStartCommandArgs args)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public CommandState GetCommandState(LineStartExtendCommandArgs args)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
