@@ -56,7 +56,9 @@ namespace ShowKeys
         ICommandHandler<ExtractInterfaceCommandArgs>,
         ICommandHandler<ExtractMethodCommandArgs>,
         ICommandHandler<FindReferencesCommandArgs>,
-        ICommandHandler<FormatAndValidationCommandArgs>
+        ICommandHandler<FormatAndValidationCommandArgs>,
+        ICommandHandler<GotoBraceCommandArgs>,
+        ICommandHandler<GotoBraceExtCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -617,6 +619,18 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(GotoBraceCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** GotoBraceCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(GotoBraceExtCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** GotoBraceExtCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -742,6 +756,16 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(FormatAndValidationCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(GotoBraceCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(GotoBraceExtCommandArgs args)
         {
             return CommandState.Unspecified;
         }
