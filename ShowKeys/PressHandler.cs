@@ -77,7 +77,13 @@ namespace ShowKeys
         ICommandHandler<NavigateToNextHighlightedReferenceCommandArgs>,
         ICommandHandler<NavigateToPreviousHighlightedReferenceCommandArgs>,
         ICommandHandler<OpenLineAboveCommandArgs>,
-        ICommandHandler<OpenLineBelowCommandArgs>
+        ICommandHandler<OpenLineBelowCommandArgs>,
+        ICommandHandler<OutlineCollapseToDefinitionsCommandArgs>,
+        ICommandHandler<OutlineHideSelectionCommandArgs>,
+        ICommandHandler<OutlineStopHidingAllCommandArgs>,
+        ICommandHandler<OutlineStopHidingCurrentCommandArgs>,
+        ICommandHandler<OutlineToggleAllCommandArgs>,
+        ICommandHandler<OutlineToggleCurrentCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -764,6 +770,42 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(OutlineCollapseToDefinitionsCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** OutlineCollapseToDefinitionsCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(OutlineHideSelectionCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** OutlineHideSelectionCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(OutlineStopHidingAllCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** OutlineStopHidingAllCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(OutlineStopHidingCurrentCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** OutlineStopHidingCurrentCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(OutlineToggleAllCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** OutlineToggleAllCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(OutlineToggleCurrentCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** OutlineToggleCurrentCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -994,6 +1036,36 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(OpenLineBelowCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(OutlineCollapseToDefinitionsCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(OutlineHideSelectionCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(OutlineStopHidingAllCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(OutlineStopHidingCurrentCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(OutlineToggleAllCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(OutlineToggleCurrentCommandArgs args)
         {
             return CommandState.Unspecified;
         }
