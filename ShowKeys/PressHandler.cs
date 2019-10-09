@@ -6,14 +6,32 @@ using System.ComponentModel.Composition;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.Commanding;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Editor.Commanding.Commands;
 using Microsoft.VisualStudio.Utilities;
 
 namespace ShowKeys
 {
+    // Multiple content types are specified to try and capture more scenarios
+    // as other handlers may suppress or intercept requests.
     [Export(typeof(ICommandHandler))]
+    [ContentType("any")]
     [ContentType("text")]
+    [ContentType("Basic")]
+    [ContentType("CSharp")]
+    [ContentType("F#")]
+    [ContentType("xml")]
+    [ContentType("XAML")]
+    [ContentType("CSS")]
+    [ContentType("HTML")]
+    [ContentType("JScript")]
+    [ContentType("TypeScript")]
+    [ContentType("Python")]
+    [ContentType("Java")]
     [Name("ShowKeys command listener")]
+    [TextViewRole(PredefinedTextViewRoles.PrimaryDocument)]
+    [TextViewRole(PredefinedTextViewRoles.Editable)]
+    [TextViewRole(PredefinedTextViewRoles.EmbeddedPeekTextView)]
     internal class PressHandler :
         ICommandHandler<CutCommandArgs>,
         ICommandHandler<CopyCommandArgs>,
@@ -105,6 +123,12 @@ namespace ShowKeys
         ICommandHandler<WordDeleteToStartCommandArgs>
     {
         public string DisplayName => "ShowKeys";
+
+        //// *********************************************************************************
+        //// *                                   IMPORTANT!                                  *
+        //// *                                   **********                                  *
+        //// * All execution requests should return false as not actually handling anything. *
+        //// *********************************************************************************
 
         public bool ExecuteCommand(CutCommandArgs args, CommandExecutionContext executionContext)
         {
@@ -971,6 +995,12 @@ namespace ShowKeys
             System.Diagnostics.Debug.WriteLine("*** WordDeleteToStartCommandArgs");
             return false;
         }
+
+        //// **********************************************************************************************
+        //// *                                         IMPORTANT!                                         *
+        //// *                                         **********                                         *
+        //// * All handlers should return an unspecified state to not interfere with other functionality. *
+        //// **********************************************************************************************
 
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
