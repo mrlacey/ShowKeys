@@ -83,7 +83,8 @@ namespace ShowKeys
         ICommandHandler<OutlineStopHidingAllCommandArgs>,
         ICommandHandler<OutlineStopHidingCurrentCommandArgs>,
         ICommandHandler<OutlineToggleAllCommandArgs>,
-        ICommandHandler<OutlineToggleCurrentCommandArgs>
+        ICommandHandler<OutlineToggleCurrentCommandArgs>,
+        ICommandHandler<PasteAsHTMLCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -806,6 +807,12 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(PasteAsHTMLCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** PasteAsHTMLCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -1066,6 +1073,11 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(OutlineToggleCurrentCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(PasteAsHTMLCommandArgs args)
         {
             return CommandState.Unspecified;
         }
