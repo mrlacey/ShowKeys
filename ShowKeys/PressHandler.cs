@@ -73,7 +73,11 @@ namespace ShowKeys
         ICommandHandler<LineEndExtendCommandArgs>,
         ICommandHandler<LineStartCommandArgs>,
         ICommandHandler<LineStartExtendCommandArgs>,
-        ICommandHandler<MoveLastCaretDownCommandArgs>
+        ICommandHandler<MoveLastCaretDownCommandArgs>,
+        ICommandHandler<NavigateToNextHighlightedReferenceCommandArgs>,
+        ICommandHandler<NavigateToPreviousHighlightedReferenceCommandArgs>,
+        ICommandHandler<OpenLineAboveCommandArgs>,
+        ICommandHandler<OpenLineBelowCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -736,6 +740,30 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(NavigateToNextHighlightedReferenceCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** NavigateToNextHighlightedReferenceCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(NavigateToPreviousHighlightedReferenceCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** NavigateToPreviousHighlightedReferenceCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(OpenLineAboveCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** OpenLineAboveCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(OpenLineBelowCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** OpenLineBelowCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -946,6 +974,26 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(MoveLastCaretDownCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(NavigateToNextHighlightedReferenceCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(NavigateToPreviousHighlightedReferenceCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(OpenLineAboveCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(OpenLineBelowCommandArgs args)
         {
             return CommandState.Unspecified;
         }
