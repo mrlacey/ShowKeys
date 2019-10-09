@@ -84,7 +84,27 @@ namespace ShowKeys
         ICommandHandler<OutlineStopHidingCurrentCommandArgs>,
         ICommandHandler<OutlineToggleAllCommandArgs>,
         ICommandHandler<OutlineToggleCurrentCommandArgs>,
-        ICommandHandler<PasteAsHTMLCommandArgs>
+        ICommandHandler<PasteAsHTMLCommandArgs>,
+        ICommandHandler<RemoveLastSecondaryCaretCommandArgs>,
+        ICommandHandler<RemoveParametersCommandArgs>,
+        ICommandHandler<ReorderParametersCommandArgs>,
+        ICommandHandler<ReturnKeyCommandArgs>,
+        ICommandHandler<LeftKeyCommandArgs>,
+        ICommandHandler<RightKeyCommandArgs>,
+        ICommandHandler<RotatePrimaryCaretNextCommandArgs>,
+        ICommandHandler<RotatePrimaryCaretPreviousCommandArgs>,
+        ICommandHandler<SelectContainingDeclarationCommandArgs>,
+        ICommandHandler<ShowClipboardHistoryCommandArgs>,
+        ICommandHandler<ShowContextMenuCommandArgs>,
+        ICommandHandler<ShowNavigateMenuCommandArgs>,
+        ICommandHandler<StartAutomaticOutliningCommandArgs>,
+        ICommandHandler<SyncClassViewCommandArgs>,
+        ICommandHandler<ToggleCompletionModeCommandArgs>,
+        ICommandHandler<TypeCharCommandArgs>,
+        ICommandHandler<UncollapseTagCommandArgs>,
+        ICommandHandler<ViewCallHierarchyCommandArgs>,
+        ICommandHandler<WordDeleteToEndCommandArgs>,
+        ICommandHandler<WordDeleteToStartCommandArgs>
     {
         public string DisplayName => "ShowKeys";
 
@@ -813,6 +833,126 @@ namespace ShowKeys
             return false;
         }
 
+        public bool ExecuteCommand(RemoveLastSecondaryCaretCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** RemoveLastSecondaryCaretCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(RemoveParametersCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** RemoveParametersCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(ReorderParametersCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** ReorderParametersCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(ReturnKeyCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** ReturnKeyCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(LeftKeyCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** LeftKeyCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(RightKeyCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** RightKeyCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(RotatePrimaryCaretNextCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** RotatePrimaryCaretNextCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(RotatePrimaryCaretPreviousCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** RotatePrimaryCaretPreviousCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(SelectContainingDeclarationCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** SelectContainingDeclarationCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(ShowClipboardHistoryCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** ShowClipboardHistoryCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(ShowContextMenuCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** ShowContextMenuCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(ShowNavigateMenuCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** ShowNavigateMenuCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(StartAutomaticOutliningCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** StartAutomaticOutliningCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(SyncClassViewCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** SyncClassViewCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(ToggleCompletionModeCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** ToggleCompletionModeCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(TypeCharCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** TypeCharCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(UncollapseTagCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** UncollapseTagCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(ViewCallHierarchyCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** ViewCallHierarchyCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(WordDeleteToEndCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** WordDeleteToEndCommandArgs");
+            return false;
+        }
+
+        public bool ExecuteCommand(WordDeleteToStartCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** WordDeleteToStartCommandArgs");
+            return false;
+        }
+
         public CommandState GetCommandState(CutCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(CopyCommandArgs args) => CommandState.Unspecified;
@@ -1078,6 +1218,106 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(PasteAsHTMLCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(RemoveLastSecondaryCaretCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(RemoveParametersCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(ReorderParametersCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(ReturnKeyCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(LeftKeyCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(RightKeyCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(RotatePrimaryCaretNextCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(RotatePrimaryCaretPreviousCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(SelectContainingDeclarationCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(ShowClipboardHistoryCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(ShowContextMenuCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(ShowNavigateMenuCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(StartAutomaticOutliningCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(SyncClassViewCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(ToggleCompletionModeCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(TypeCharCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(UncollapseTagCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(ViewCallHierarchyCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(WordDeleteToEndCommandArgs args)
+        {
+            return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(WordDeleteToStartCommandArgs args)
         {
             return CommandState.Unspecified;
         }
