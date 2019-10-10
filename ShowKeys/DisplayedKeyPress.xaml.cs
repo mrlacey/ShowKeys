@@ -80,6 +80,16 @@ namespace ShowKeys
                 // case Keys.PageDown:
                 case Keys.Next:
                     return nameof(Keys.PageDown);
+                case KeyAlias.Equals:
+                    return "=";
+                case KeyAlias.Minus:
+                    return "-";
+                case KeyAlias.ClosingSquareBrace:
+                    return "]";
+                case KeyAlias.SemiColon:
+                    return ";";
+                case KeyAlias.BackTick:
+                    return "`";
 
                 default:
                     return key.ToString();

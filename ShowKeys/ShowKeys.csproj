@@ -64,6 +64,7 @@
     <Compile Include="ContentSpecificCommandHandlers\JavascriptCommandHandler.cs" />
     <Compile Include="ContentSpecificCommandHandlers\HtmlCommandHandler.cs" />
     <Compile Include="ContentSpecificCommandHandlers\FSharpCommandHandler.cs" />
+    <Compile Include="KeyAlias.cs" />
     <Compile Include="KeyControl.xaml.cs">
       <DependentUpon>KeyControl.xaml</DependentUpon>
     </Compile>

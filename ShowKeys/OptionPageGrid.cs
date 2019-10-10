@@ -208,5 +208,135 @@ namespace ShowKeys
         [DisplayName("Document Start")]
         [Description("Show keys when the 'Go to Document Start' command is invoked.")]
         public bool ShowDocumentStart { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Collapse Tag")]
+        [Description("Show keys when the 'Collapse Tag' command is invoked.")]
+        public bool ShowCollapseTag { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Encapsulate Field")]
+        [Description("Show keys when the 'Encapsulate Field' command is invoked.")]
+        public bool ShowEncapsulateField { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Execute In Interactive")]
+        [Description("Show keys when the 'Execute In Interactive' command is invoked.")]
+        public bool ShowExecuteInInteractive { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Go to Brace")]
+        [Description("Show keys when the 'Go to Brace' command is invoked.")]
+        public bool ShowGotoBrace { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Help")]
+        [Description("Show keys when the 'Help' command is invoked.")]
+        public bool ShowHelp { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Insert All Matching Carets")]
+        [Description("Show keys when the 'Insert All Matching Carets' command is invoked.")]
+        public bool ShowInsertAllMatchingCarets { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Insert Next Matching Carets")]
+        [Description("Show keys when the 'Insert Next Matching Carets' command is invoked.")]
+        public bool ShowInsertNextMatchingCarets { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Navigate To Next Highlighted Reference")]
+        [Description("Show keys when the 'Navigate To Next Highlighted Reference' command is invoked.")]
+        public bool ShowNavigateToNextHighlightedReference { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Navigate To Previous Highlighted Reference")]
+        [Description("Show keys when the 'Navigate To Previous Highlighted Reference' command is invoked.")]
+        public bool ShowNavigateToPreviousHighlightedReference { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Open Line Above")]
+        [Description("Show keys when the 'Open Line Above' command is invoked.")]
+        public bool ShowOpenLineAbove { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Open Line Below")]
+        [Description("Show keys when the 'Open Line Below' command is invoked.")]
+        public bool ShowOpenLineBelow { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Outline Collapse To Definitions")]
+        [Description("Show keys when the 'Outline Collapse To Definitions' command is invoked.")]
+        public bool ShowOutlineCollapseToDefinitions { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Outline Hide Selection")]
+        [Description("Show keys when the 'Outline Hide Selection' command is invoked.")]
+        public bool ShowOutlineHideSelection { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Outline Stop Hiding Current")]
+        [Description("Show keys when the 'Outline Stop Hiding Current' command is invoked.")]
+        public bool ShowOutlineStopHidingCurrent { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Outline Toggle All")]
+        [Description("Show keys when the 'Outline Toggle All' command is invoked.")]
+        public bool ShowOutlineToggleAll { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Remove Parameters")]
+        [Description("Show keys when the 'Remove Parameters' command is invoked.")]
+        public bool ShowRemoveParameters { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Reorder Parameters")]
+        [Description("Show keys when the 'Reorder Parameters' command is invoked.")]
+        public bool ShowReorderParameters { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Show Navigate Menu")]
+        [Description("Show keys when the 'Show Navigate Menu' command is invoked.")]
+        public bool ShowShowNavigateMenu { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Toggle Completion Mode")]
+        [Description("Show keys when the 'Toggle Completion Mode' command is invoked.")]
+        public bool ShowToggleCompletionMode { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("View Call Hierarchy")]
+        [Description("Show keys when the 'View Call Hierarchy' command is invoked.")]
+        public bool ShowViewCallHierarchy { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Word Delete To End")]
+        [Description("Show keys when the 'Word Delete To End' command is invoked.")]
+        public bool ShowWordDeleteToEnd { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Word Delete To Start")]
+        [Description("Show keys when the 'Word Delete To Start' command is invoked.")]
+        public bool ShowWordDeleteToStart { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Navigate To Next Issue In Document")]
+        [Description("Show keys when the 'Navigate To Next Issue In Document' command is invoked.")]
+        public bool ShowNavigateToNextIssueInDocument { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Navigate To Previous Issue In Document")]
+        [Description("Show keys when the 'Navigate To Previous Issue In Document' command is invoked.")]
+        public bool ShowNavigateToPreviousIssueInDocument { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Contract Selection")]
+        [Description("Show keys when the 'Contract Selection' command is invoked.")]
+        public bool ShowContractSelection { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Expand Selection")]
+        [Description("Show keys when the 'Expand Selection' command is invoked.")]
+        public bool ShowExpandSelection { get; set; } = true;
     }
 }

@@ -513,13 +513,38 @@ namespace ShowKeys
 
         public bool ExecuteCommand(CollapseTagCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** CollapseTagCommandArgs 'Ctrl+M, Ctrl+T'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowCollapseTag)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.M },
+                        new[] { Keys.Control, Keys.T }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(ContractSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ContractSelectionCommandArgs 'Shift+Alt+-'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowContractSelection)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Shift,
+                        Keys.Alt,
+                        KeyAlias.Minus).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
@@ -561,19 +586,53 @@ namespace ShowKeys
 
         public bool ExecuteCommand(EncapsulateFieldCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** EncapsulateFieldCommandArgs 'Ctrl+R, Ctrl+E'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowEncapsulateField)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.R },
+                        new[] { Keys.Control, Keys.E }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(ExecuteInInteractiveCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ExecuteInInteractiveCommandArgs 'Alt+Enter'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowExecuteInInteractive)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Alt, Keys.Enter }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(ExpandSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ExpandSelectionCommandArgs 'Shift+Alt+='");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowExpandSelection)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Shift, Keys.Alt, KeyAlias.Equals }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
@@ -597,13 +656,35 @@ namespace ShowKeys
 
         public bool ExecuteCommand(GotoBraceCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** GotoBraceCommandArgs 'Ctrl+]'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowGotoBrace)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, KeyAlias.ClosingSquareBrace }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(GotoBraceExtCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** GotoBraceExtCommandArgs 'Ctrl+Shift+]'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowGotoBrace)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.Shift, KeyAlias.ClosingSquareBrace }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
@@ -626,19 +707,52 @@ namespace ShowKeys
 
         public bool ExecuteCommand(HelpCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** HelpCommandArgs 'F1'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowHelp)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.F1 }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(InsertAllMatchingCaretsCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** InsertAllMatchingCaretsCommandArgs 'Shift+Alt+;'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowInsertAllMatchingCarets)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Shift, Keys.Alt, KeyAlias.SemiColon }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(InsertNextMatchingCaretCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** InsertNextMatchingCaretCommandArgs 'Shift+Alt+.'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowInsertNextMatchingCarets)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Shift, Keys.Alt, Keys.Decimal }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
@@ -714,61 +828,177 @@ namespace ShowKeys
 
         public bool ExecuteCommand(NavigateToNextHighlightedReferenceCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** NavigateToNextHighlightedReferenceCommandArgs '	Ctrl+Shift+Down Arrow'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowNavigateToNextHighlightedReference)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.Shift, Keys.Down }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(NavigateToPreviousHighlightedReferenceCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** NavigateToPreviousHighlightedReferenceCommandArgs 'Ctrl+Shift+Up Arrow'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowNavigateToPreviousHighlightedReference)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.Shift, Keys.Up }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(OpenLineAboveCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** OpenLineAboveCommandArgs 'Ctrl+Enter'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowOpenLineAbove)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.Enter }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(OpenLineBelowCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** OpenLineBelowCommandArgs 'Ctrl+Shift+Enter'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowOpenLineBelow)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.Shift, Keys.Enter }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(OutlineCollapseToDefinitionsCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** OutlineCollapseToDefinitionsCommandArgs 'Ctrl+M, Ctrl+O '");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowOutlineCollapseToDefinitions)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.M },
+                        new[] { Keys.Control, Keys.O }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(OutlineHideSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** OutlineHideSelectionCommandArgs 'Ctrl+M, Ctrl+H'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowOutlineHideSelection)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.M },
+                        new[] { Keys.Control, Keys.H }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(OutlineStopHidingCurrentCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** OutlineStopHidingCurrentCommandArgs 'Ctrl+M, Ctrl+U'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowOutlineStopHidingCurrent)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.M },
+                        new[] { Keys.Control, Keys.U }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(OutlineToggleAllCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** OutlineToggleAllCommandArgs 'Ctrl+M, Ctrl+L'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowOutlineToggleAll)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.M },
+                        new[] { Keys.Control, Keys.L }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(RemoveParametersCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** RemoveParametersCommandArgs 'Ctrl+R, Ctrl+V'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowRemoveParameters)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.R },
+                        new[] { Keys.Control, Keys.V }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(ReorderParametersCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ReorderParametersCommandArgs 'Ctrl+R, Ctrl+O'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowReorderParameters)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.R },
+                        new[] { Keys.Control, Keys.O }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
@@ -825,43 +1055,121 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ShowNavigateMenuCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ShowNavigateMenuCommandArgs 'Alt+`'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowShowNavigateMenu)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Alt, KeyAlias.BackTick }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(ToggleCompletionModeCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ToggleCompletionModeCommandArgs 'Ctrl+Alt+Space'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowToggleCompletionMode)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.Alt, Keys.Space }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(ViewCallHierarchyCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ViewCallHierarchyCommandArgs 'Ctrl+K, Ctrl+T'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowViewCallHierarchy)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.K },
+                        new[] { Keys.Control, Keys.T }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(WordDeleteToEndCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** WordDeleteToEndCommandArgs 'Ctrl+Delete'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowWordDeleteToEnd)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.Delete }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(WordDeleteToStartCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** WordDeleteToStartCommandArgs '	Ctrl+Backspace'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowWordDeleteToStart)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Control, Keys.Back }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(NavigateToNextIssueInDocumentCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** NavigateToNextIssueInDocumentCommandArgs 'Alt+PgDn'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowNavigateToNextIssueInDocument)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Alt, Keys.PageDown }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(NavigateToPreviousIssueInDocumentCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** NavigateToPreviousIssueInDocumentCommandArgs 'Alt+PgUp'");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowNavigateToPreviousIssueInDocument)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        new[] { Keys.Alt, Keys.PageUp }).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
