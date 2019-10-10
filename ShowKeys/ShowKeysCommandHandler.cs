@@ -53,8 +53,6 @@ namespace ShowKeys
         ICommandHandler<ErrorCommandArgsBase>,
         ICommandHandler<ExecuteInInteractiveCommandArgs>,
         ICommandHandler<ExpandSelectionCommandArgs>,
-        ICommandHandler<ExtractInterfaceCommandArgs>,
-        ICommandHandler<ExtractMethodCommandArgs>,
         ICommandHandler<FindReferencesCommandArgs>,
         ICommandHandler<FormatAndValidationCommandArgs>,
         ICommandHandler<GotoBraceCommandArgs>,
@@ -645,18 +643,6 @@ namespace ShowKeys
             return false;
         }
 
-        public bool ExecuteCommand(ExtractInterfaceCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** ExtractInterfaceCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(ExtractMethodCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** ExtractMethodCommandArgs");
-            return false;
-        }
-
         public bool ExecuteCommand(FindReferencesCommandArgs args, CommandExecutionContext executionContext)
         {
             var options = ShowKeysPackage.Instance?.Options;
@@ -1112,16 +1098,6 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(ExpandSelectionCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(ExtractInterfaceCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(ExtractMethodCommandArgs args)
         {
             return CommandState.Unspecified;
         }
