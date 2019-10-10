@@ -29,7 +29,6 @@ namespace ShowKeys
         ICommandHandler<DuplicateSelectionCommandArgs>,
         ICommandHandler<FormatDocumentCommandArgs>,
         ICommandHandler<FormatSelectionCommandArgs>,
-        ICommandHandler<InsertSnippetCommandArgs>,
         ICommandHandler<InvokeQuickInfoCommandArgs>,
         ICommandHandler<MoveSelectedLinesDownCommandArgs>,
         ICommandHandler<MoveSelectedLinesUpCommandArgs>,
@@ -37,7 +36,6 @@ namespace ShowKeys
         ICommandHandler<RenameCommandArgs>,
         ICommandHandler<SaveCommandArgs>,
         ICommandHandler<SelectAllCommandArgs>,
-        ICommandHandler<SurroundWithCommandArgs>,
         ICommandHandler<UndoCommandArgs>,
         ICommandHandler<ViewCodeCommandArgs>,
         ICommandHandler<ViewFormCommandArgs>,
@@ -356,24 +354,6 @@ namespace ShowKeys
             return false;
         }
 
-        public bool ExecuteCommand(InsertSnippetCommandArgs args, CommandExecutionContext executionContext)
-        {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowInsertSnippet)
-            {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.K },
-                        new[] { Keys.Control, Keys.X }).ConfigureAwait(false);
-                });
-            }
-
-            return false;
-        }
-
         public bool ExecuteCommand(InvokeQuickInfoCommandArgs args, CommandExecutionContext executionContext)
         {
             var options = ShowKeysPackage.Instance?.Options;
@@ -494,24 +474,6 @@ namespace ShowKeys
                         options,
                         Keys.Control,
                         Keys.A).ConfigureAwait(false);
-                });
-            }
-
-            return false;
-        }
-
-        public bool ExecuteCommand(SurroundWithCommandArgs args, CommandExecutionContext executionContext)
-        {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowSurroundWith)
-            {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.K },
-                        new[] { Keys.Control, Keys.S }).ConfigureAwait(false);
                 });
             }
 
@@ -1023,8 +985,6 @@ namespace ShowKeys
 
         public CommandState GetCommandState(FormatSelectionCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(InsertSnippetCommandArgs args) => CommandState.Unspecified;
-
         public CommandState GetCommandState(InvokeQuickInfoCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(MoveSelectedLinesUpCommandArgs args) => CommandState.Unspecified;
@@ -1036,8 +996,6 @@ namespace ShowKeys
         public CommandState GetCommandState(SaveCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(SelectAllCommandArgs args) => CommandState.Unspecified;
-
-        public CommandState GetCommandState(SurroundWithCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(UndoCommandArgs args) => CommandState.Unspecified;
 

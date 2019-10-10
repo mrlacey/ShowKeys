@@ -105,11 +105,6 @@ namespace ShowKeys
         public bool ShowFormatDocument { get; set; } = true;
 
         [Category("Show Commands")]
-        [DisplayName("Insert Snippet")]
-        [Description("Show keys when the 'Insert Snippet' command is invoked.")]
-        public bool ShowInsertSnippet { get; set; } = true;
-
-        [Category("Show Commands")]
         [DisplayName("Invoke Quick Info")]
         [Description("Show keys when the 'Invoke Quick Info' command is invoked.")]
         public bool ShowInvokeQuickInfo { get; set; } = true;
@@ -148,11 +143,6 @@ namespace ShowKeys
         [DisplayName("Select All")]
         [Description("Show keys when the 'Select All' command is invoked.")]
         public bool ShowSelectAll { get; set; } = true;
-
-        [Category("Show Commands")]
-        [DisplayName("Surround With")]
-        [Description("Show keys when the 'Surround With' command is invoked.")]
-        public bool ShowSurroundWith { get; set; } = true;
 
         [Category("Show Commands")]
         [DisplayName("View Code")]
