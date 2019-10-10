@@ -20,24 +20,27 @@ namespace ShowKeys
             this.InitializeComponent();
         }
 
-        public async Task ShowAsync(OptionPageGrid options, params Keys[] keys)
-        {
-            await this.ShowAsync(options, new[] { keys }).ConfigureAwait(false);
-        }
-
-        private string KeysAsString(Keys[][] keys)
+        public static string KeysAsString(Keys[][] keys)
         {
             var result = new StringBuilder();
 
-            foreach (var group in keys)
+            if (keys != null)
             {
-                foreach (var key in group)
+                foreach (var group in keys)
                 {
-                    result.Append(key.ToString());
+                    foreach (var key in group)
+                    {
+                        result.Append(key.ToString());
+                    }
                 }
             }
 
             return result.ToString();
+        }
+
+        public async Task ShowAsync(OptionPageGrid options, params Keys[] keys)
+        {
+            await this.ShowAsync(options, new[] { keys }).ConfigureAwait(false);
         }
 
         public async Task ShowAsync(OptionPageGrid options, params Keys[][] keys)
@@ -48,7 +51,7 @@ namespace ShowKeys
             }
 
             // Avoid showing the same keys in quick succession if triggered by multiple content types
-            var keysString = this.KeysAsString(keys);
+            var keysString = KeysAsString(keys);
 
             if (this.currentlyShowing == keysString)
             {
