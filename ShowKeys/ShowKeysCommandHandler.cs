@@ -1,39 +1,20 @@
-﻿// <copyright file="PressHandler.cs" company="Matt Lacey Limited">
+﻿// <copyright file="ShowKeysCommandHandler.cs" company="Matt Lacey Limited">
 // Copyright (c) Matt Lacey Limited. All rights reserved.
 // </copyright>
 
-using System.ComponentModel.Composition;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.Commanding;
 using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Editor.Commanding.Commands;
-using Microsoft.VisualStudio.Utilities;
 
 namespace ShowKeys
-{    
+{
     // Multiple content types are specified to try and capture more scenarios
     // as other handlers may suppress or intercept requests.
-    //[Export(typeof(ICommandHandler))]
-    //[ContentType("any")]
-    //[ContentType("text")]
-    //[ContentType("Basic")]
-    //[ContentType("CSharp")]
-    //[ContentType("F#")]
-    //[ContentType("C/C++")]
-    //[ContentType("xml")]
-    //[ContentType("XAML")]
-    //[ContentType("CSS")]
-    //[ContentType("HTML")]
-    //[ContentType("JScript")]
-    //[ContentType("TypeScript")]
-    //[ContentType("Python")]
-    //[ContentType("Java")]
-    //[Name("ShowKeys command listener")]
-    ////[TextViewRole(PredefinedTextViewRoles.PrimaryDocument)]
-    ////[TextViewRole(PredefinedTextViewRoles.Editable)]
-    ////[TextViewRole(PredefinedTextViewRoles.EmbeddedPeekTextView)]
-    public class PressHandler :
+    // Some commands are also only handled when workign with a single content type.
+    // This class is inherited by a separate type that only supports a single content type.
+    // - This enables more functionality in this extension to work.
+    public class ShowKeysCommandHandler :
         ICommandHandler<CutCommandArgs>,
         ICommandHandler<CopyCommandArgs>,
         ICommandHandler<PasteCommandArgs>,
@@ -708,7 +689,18 @@ namespace ShowKeys
 
         public bool ExecuteCommand(GoToDefinitionCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** GoToDefinitionCommandArgs");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowGoToDefinition)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.F12).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
@@ -1362,24 +1354,4 @@ namespace ShowKeys
             return CommandState.Unspecified;
         }
     }
-
-    [Export(typeof(ICommandHandler))]
-    [ContentType("CSharp")]
-    [Name(nameof(CSharpPressHandler))]
-    internal class CSharpPressHandler : PressHandler
-    {
-        //public string DisplayName => throw new System.NotImplementedException();
-
-        //public bool ExecuteCommand(GoToDefinitionCommandArgs args, CommandExecutionContext executionContext)
-        //{
-        //    System.Diagnostics.Debug.WriteLine("GoToDefinitionCommandArgs");
-        //    return false;
-        //}
-
-        //public CommandState GetCommandState(GoToDefinitionCommandArgs args)
-        //{
-        //    return CommandState.Available;
-        //}
-    }
-
 }

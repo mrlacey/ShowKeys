@@ -48,13 +48,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AnimationHelper.cs" />
+    <Compile Include="ContentSpecificCommandHandlers\AnyContentTypeCommandHandler.cs" />
     <Compile Include="ColorHelper.cs" />
     <Compile Include="CombiningControl.xaml.cs">
       <DependentUpon>CombiningControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContentSpecificCommandHandlers\CssCommandHandler.cs" />
+    <Compile Include="ContentSpecificCommandHandlers\CPlusPlusCommandHandler.cs" />
+    <Compile Include="ContentSpecificCommandHandlers\CSharpCommandHandler.cs" />
     <Compile Include="DisplayedKeyPress.xaml.cs">
       <DependentUpon>DisplayedKeyPress.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContentSpecificCommandHandlers\JavaCommandHandler.cs" />
+    <Compile Include="ContentSpecificCommandHandlers\JavascriptCommandHandler.cs" />
+    <Compile Include="ContentSpecificCommandHandlers\HtmlCommandHandler.cs" />
+    <Compile Include="ContentSpecificCommandHandlers\FSharpCommandHandler.cs" />
     <Compile Include="KeyControl.xaml.cs">
       <DependentUpon>KeyControl.xaml</DependentUpon>
     </Compile>
@@ -66,8 +74,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="OptionsCommand.cs" />
-    <Compile Include="PressHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ContentSpecificCommandHandlers\PythonCommandHandler.cs" />
+    <Compile Include="ShowKeysCommandHandler.cs" />
     <Compile Include="ShowKeysOutputPane.cs" />
     <Compile Include="ShowKeysPackage.cs" />
     <Compile Include="ShowKeysPackage1.cs">
@@ -75,12 +84,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ShowKeysPackage.vsct</DependentUpon>
     </Compile>
+    <Compile Include="ContentSpecificCommandHandlers\TextCommandHandler.cs" />
     <Compile Include="ToggleIfEnabledCommand.cs" />
+    <Compile Include="ContentSpecificCommandHandlers\TypeScriptCommandHandler.cs" />
+    <Compile Include="ContentSpecificCommandHandlers\VisualBasicCommandHandler.cs" />
     <Compile Include="VSPackage.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VSPackage.resx</DependentUpon>
     </Compile>
+    <Compile Include="ContentSpecificCommandHandlers\XamlCommandHandler.cs" />
+    <Compile Include="ContentSpecificCommandHandlers\XmlCommandHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />

@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
@@ -12,6 +13,7 @@ namespace ShowKeys
     public partial class DisplayedKeyPress : System.Windows.Controls.UserControl
     {
         private static Guid lastRequest;
+        private string currentlyShowing;
 
         public DisplayedKeyPress()
         {
@@ -23,6 +25,21 @@ namespace ShowKeys
             await this.ShowAsync(options, new[] { keys }).ConfigureAwait(false);
         }
 
+        private string KeysAsString(Keys[][] keys)
+        {
+            var result = new StringBuilder();
+
+            foreach (var group in keys)
+            {
+                foreach (var key in group)
+                {
+                    result.Append(key.ToString());
+                }
+            }
+
+            return result.ToString();
+        }
+
         public async Task ShowAsync(OptionPageGrid options, params Keys[][] keys)
         {
             if (!options?.IsEnabled ?? false)
@@ -30,9 +47,26 @@ namespace ShowKeys
                 return;
             }
 
-            this.Wrapper.Margin = new Thickness(options.Margin);
+            // Avoid showing the same keys in quick succession if triggered by multiple content types
+            var keysString = this.KeysAsString(keys);
 
-            await this.DisplayAsync(options, keys).ConfigureAwait(false);
+            if (this.currentlyShowing == keysString)
+            {
+                return;
+            }
+
+            this.currentlyShowing = keysString;
+
+            try
+            {
+                this.Wrapper.Margin = new Thickness(options.Margin);
+
+                await this.DisplayAsync(options, keys).ConfigureAwait(false);
+            }
+            finally
+            {
+                this.currentlyShowing = null;
+            }
         }
 
         private static string GetKeyName(Keys key)
