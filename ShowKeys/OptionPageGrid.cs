@@ -183,5 +183,10 @@ namespace ShowKeys
         [DisplayName("Go To Definition")]
         [Description("Show keys when the 'Go To Definition' command is invoked.")]
         public bool ShowGoToDefinition { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Find All References")]
+        [Description("Show keys when the 'Find All References' command is invoked.")]
+        public bool ShowFindRefrences { get; set; } = true;
     }
 }

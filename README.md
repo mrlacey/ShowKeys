@@ -14,6 +14,7 @@ Works with
 - Cut (Ctrl+X)
 - Delete (Delete)
 - Escape (Escape)
+- Find All References (Shift+F12)
 - Go To Definition (F12)
 - Invoke Quick Info (Ctrl+K, Ctrl+I)
 - Left (Left Arrow)

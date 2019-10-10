@@ -659,7 +659,19 @@ namespace ShowKeys
 
         public bool ExecuteCommand(FindReferencesCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** FindReferencesCommandArgs");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowFindReferences)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Shift,
+                        Keys.F12).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
