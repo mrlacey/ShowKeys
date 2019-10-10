@@ -919,194 +919,80 @@ namespace ShowKeys
 
         public CommandState GetCommandState(ViewFormCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(CollapseTagCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(CollapseTagCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(ContractSelectionCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(ContractSelectionCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(DocumentEndCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(DocumentEndCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(DocumentStartCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(DocumentStartCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(EncapsulateFieldCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(EncapsulateFieldCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(ExecuteInInteractiveCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(ExecuteInInteractiveCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(ExpandSelectionCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(ExpandSelectionCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(FindReferencesCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(FindReferencesCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(GotoBraceCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(GotoBraceCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(GotoBraceExtCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(GotoBraceExtCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(GoToDefinitionCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(GoToDefinitionCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(HelpCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(HelpCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(InsertAllMatchingCaretsCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(InsertAllMatchingCaretsCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(InsertNextMatchingCaretCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(InsertNextMatchingCaretCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(LineEndCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(LineEndCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(LineEndExtendCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(LineEndExtendCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(LineStartCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(LineStartCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(LineStartExtendCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(LineStartExtendCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(NavigateToNextHighlightedReferenceCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(NavigateToNextHighlightedReferenceCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(NavigateToPreviousHighlightedReferenceCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(NavigateToPreviousHighlightedReferenceCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(OpenLineAboveCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(OpenLineAboveCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(OpenLineBelowCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(OpenLineBelowCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(OutlineCollapseToDefinitionsCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(OutlineCollapseToDefinitionsCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(OutlineHideSelectionCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(OutlineHideSelectionCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(OutlineStopHidingCurrentCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(OutlineStopHidingCurrentCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(OutlineToggleAllCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(OutlineToggleAllCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(RemoveParametersCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(RemoveParametersCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(ReorderParametersCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(ReorderParametersCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(ReturnKeyCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(ReturnKeyCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(LeftKeyCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(LeftKeyCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(RightKeyCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(RightKeyCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(ShowNavigateMenuCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(ShowNavigateMenuCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(ToggleCompletionModeCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(ToggleCompletionModeCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(ViewCallHierarchyCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(ViewCallHierarchyCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(WordDeleteToEndCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(WordDeleteToEndCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(WordDeleteToStartCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
+        public CommandState GetCommandState(WordDeleteToStartCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(NavigateToNextIssueInDocumentCommandArgs args)
-        {
-            throw new System.NotImplementedException();
-        }
+        public CommandState GetCommandState(NavigateToNextIssueInDocumentCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(NavigateToPreviousIssueInDocumentCommandArgs args)
-        {
-            throw new System.NotImplementedException();
-        }
+        public CommandState GetCommandState(NavigateToPreviousIssueInDocumentCommandArgs args) => CommandState.Unspecified;
     }
 }
