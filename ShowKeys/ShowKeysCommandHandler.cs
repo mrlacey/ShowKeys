@@ -39,63 +39,41 @@ namespace ShowKeys
         ICommandHandler<UndoCommandArgs>,
         ICommandHandler<ViewCodeCommandArgs>,
         ICommandHandler<ViewFormCommandArgs>,
-        ICommandHandler<AutomaticLineEnderCommandArgs>,
-        ICommandHandler<CodeCleanUpCommandArgs>,
         ICommandHandler<CollapseTagCommandArgs>,
-        ICommandHandler<CommitUniqueCompletionListItemCommandArgs>,
         ICommandHandler<ContractSelectionCommandArgs>,
-        ICommandHandler<CopyToInteractiveCommandArgs>,
         ICommandHandler<DocumentEndCommandArgs>,
         ICommandHandler<DocumentStartCommandArgs>,
         ICommandHandler<EncapsulateFieldCommandArgs>,
-        ICommandHandler<ErrorCommandArgsBase>,
+        ICommandHandler<NavigateToNextIssueInDocumentCommandArgs>,
+        ICommandHandler<NavigateToPreviousIssueInDocumentCommandArgs>,
         ICommandHandler<ExecuteInInteractiveCommandArgs>,
         ICommandHandler<ExpandSelectionCommandArgs>,
         ICommandHandler<FindReferencesCommandArgs>,
-        ICommandHandler<FormatAndValidationCommandArgs>,
         ICommandHandler<GotoBraceCommandArgs>,
         ICommandHandler<GotoBraceExtCommandArgs>,
-        ICommandHandler<GoToContainingDeclarationCommandArgs>,
         ICommandHandler<GoToDefinitionCommandArgs>,
-        ICommandHandler<GoToNextMemberCommandArgs>,
-        ICommandHandler<GoToPreviousMemberCommandArgs>,
         ICommandHandler<HelpCommandArgs>,
         ICommandHandler<InsertAllMatchingCaretsCommandArgs>,
-        ICommandHandler<InsertCommentCommandArgs>,
         ICommandHandler<InsertNextMatchingCaretCommandArgs>,
-        ICommandHandler<InvokeCompletionListCommandArgs>,
-        ICommandHandler<InvokeSignatureHelpCommandArgs>,
         ICommandHandler<LineEndCommandArgs>,
         ICommandHandler<LineEndExtendCommandArgs>,
         ICommandHandler<LineStartCommandArgs>,
         ICommandHandler<LineStartExtendCommandArgs>,
-        ICommandHandler<MoveLastCaretDownCommandArgs>,
         ICommandHandler<NavigateToNextHighlightedReferenceCommandArgs>,
         ICommandHandler<NavigateToPreviousHighlightedReferenceCommandArgs>,
         ICommandHandler<OpenLineAboveCommandArgs>,
         ICommandHandler<OpenLineBelowCommandArgs>,
         ICommandHandler<OutlineCollapseToDefinitionsCommandArgs>,
         ICommandHandler<OutlineHideSelectionCommandArgs>,
-        ICommandHandler<OutlineStopHidingAllCommandArgs>,
         ICommandHandler<OutlineStopHidingCurrentCommandArgs>,
         ICommandHandler<OutlineToggleAllCommandArgs>,
-        ICommandHandler<OutlineToggleCurrentCommandArgs>,
-        ICommandHandler<PasteAsHTMLCommandArgs>,
-        ICommandHandler<RemoveLastSecondaryCaretCommandArgs>,
         ICommandHandler<RemoveParametersCommandArgs>,
         ICommandHandler<ReorderParametersCommandArgs>,
         ICommandHandler<ReturnKeyCommandArgs>,
         ICommandHandler<LeftKeyCommandArgs>,
         ICommandHandler<RightKeyCommandArgs>,
-        ICommandHandler<RotatePrimaryCaretNextCommandArgs>,
-        ICommandHandler<RotatePrimaryCaretPreviousCommandArgs>,
-        ICommandHandler<SelectContainingDeclarationCommandArgs>,
-        ICommandHandler<ShowClipboardHistoryCommandArgs>,
         ICommandHandler<ShowNavigateMenuCommandArgs>,
-        ICommandHandler<StartAutomaticOutliningCommandArgs>,
-        ICommandHandler<SyncClassViewCommandArgs>,
         ICommandHandler<ToggleCompletionModeCommandArgs>,
-        ICommandHandler<UncollapseTagCommandArgs>,
         ICommandHandler<ViewCallHierarchyCommandArgs>,
         ICommandHandler<WordDeleteToEndCommandArgs>,
         ICommandHandler<WordDeleteToStartCommandArgs>
@@ -533,39 +511,15 @@ namespace ShowKeys
             return false;
         }
 
-        public bool ExecuteCommand(AutomaticLineEnderCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** AutomaticLineEnderCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(CodeCleanUpCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** CodeCleanUpCommandArgs");
-            return false;
-        }
-
         public bool ExecuteCommand(CollapseTagCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** CollapseTagCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(CommitUniqueCompletionListItemCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** CommitUniqueCompletionListItemCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** CollapseTagCommandArgs 'Ctrl+M, Ctrl+T'");
             return false;
         }
 
         public bool ExecuteCommand(ContractSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ContractSelectionCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(CopyToInteractiveCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** CopyToInteractiveCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** ContractSelectionCommandArgs 'Shift+Alt+-'");
             return false;
         }
 
@@ -607,25 +561,19 @@ namespace ShowKeys
 
         public bool ExecuteCommand(EncapsulateFieldCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** EncapsulateFieldCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(ErrorCommandArgsBase args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** ErrorCommandArgsBase");
+            System.Diagnostics.Debug.WriteLine("*** EncapsulateFieldCommandArgs 'Ctrl+R, Ctrl+E'");
             return false;
         }
 
         public bool ExecuteCommand(ExecuteInInteractiveCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ExecuteInInteractiveCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** ExecuteInInteractiveCommandArgs 'Alt+Enter'");
             return false;
         }
 
         public bool ExecuteCommand(ExpandSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ExpandSelectionCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** ExpandSelectionCommandArgs 'Shift+Alt+='");
             return false;
         }
 
@@ -647,27 +595,15 @@ namespace ShowKeys
             return false;
         }
 
-        public bool ExecuteCommand(FormatAndValidationCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** FormatAndValidationCommandArgs");
-            return false;
-        }
-
         public bool ExecuteCommand(GotoBraceCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** GotoBraceCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** GotoBraceCommandArgs 'Ctrl+]'");
             return false;
         }
 
         public bool ExecuteCommand(GotoBraceExtCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** GotoBraceExtCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(GoToContainingDeclarationCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** GoToContainingDeclarationCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** GotoBraceExtCommandArgs 'Ctrl+Shift+]'");
             return false;
         }
 
@@ -688,51 +624,21 @@ namespace ShowKeys
             return false;
         }
 
-        public bool ExecuteCommand(GoToNextMemberCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** GoToNextMemberCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(GoToPreviousMemberCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** GoToPreviousMemberCommandArgs");
-            return false;
-        }
-
         public bool ExecuteCommand(HelpCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** HelpCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** HelpCommandArgs 'F1'");
             return false;
         }
 
         public bool ExecuteCommand(InsertAllMatchingCaretsCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** InsertAllMatchingCaretsCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(InsertCommentCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** InsertCommentCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** InsertAllMatchingCaretsCommandArgs 'Shift+Alt+;'");
             return false;
         }
 
         public bool ExecuteCommand(InsertNextMatchingCaretCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** InsertNextMatchingCaretCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(InvokeCompletionListCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** InvokeCompletionListCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(InvokeSignatureHelpCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** InvokeSignatureHelpCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** InsertNextMatchingCaretCommandArgs 'Shift+Alt+.'");
             return false;
         }
 
@@ -806,93 +712,63 @@ namespace ShowKeys
             return false;
         }
 
-        public bool ExecuteCommand(MoveLastCaretDownCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** MoveLastCaretDownCommandArgs");
-            return false;
-        }
-
         public bool ExecuteCommand(NavigateToNextHighlightedReferenceCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** NavigateToNextHighlightedReferenceCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** NavigateToNextHighlightedReferenceCommandArgs '	Ctrl+Shift+Down Arrow'");
             return false;
         }
 
         public bool ExecuteCommand(NavigateToPreviousHighlightedReferenceCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** NavigateToPreviousHighlightedReferenceCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** NavigateToPreviousHighlightedReferenceCommandArgs 'Ctrl+Shift+Up Arrow'");
             return false;
         }
 
         public bool ExecuteCommand(OpenLineAboveCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** OpenLineAboveCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** OpenLineAboveCommandArgs 'Ctrl+Enter'");
             return false;
         }
 
         public bool ExecuteCommand(OpenLineBelowCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** OpenLineBelowCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** OpenLineBelowCommandArgs 'Ctrl+Shift+Enter'");
             return false;
         }
 
         public bool ExecuteCommand(OutlineCollapseToDefinitionsCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** OutlineCollapseToDefinitionsCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** OutlineCollapseToDefinitionsCommandArgs 'Ctrl+M, Ctrl+O '");
             return false;
         }
 
         public bool ExecuteCommand(OutlineHideSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** OutlineHideSelectionCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(OutlineStopHidingAllCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** OutlineStopHidingAllCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** OutlineHideSelectionCommandArgs 'Ctrl+M, Ctrl+H'");
             return false;
         }
 
         public bool ExecuteCommand(OutlineStopHidingCurrentCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** OutlineStopHidingCurrentCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** OutlineStopHidingCurrentCommandArgs 'Ctrl+M, Ctrl+U'");
             return false;
         }
 
         public bool ExecuteCommand(OutlineToggleAllCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** OutlineToggleAllCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(OutlineToggleCurrentCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** OutlineToggleCurrentCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(PasteAsHTMLCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** PasteAsHTMLCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(RemoveLastSecondaryCaretCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** RemoveLastSecondaryCaretCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** OutlineToggleAllCommandArgs 'Ctrl+M, Ctrl+L'");
             return false;
         }
 
         public bool ExecuteCommand(RemoveParametersCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** RemoveParametersCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** RemoveParametersCommandArgs 'Ctrl+R, Ctrl+V'");
             return false;
         }
 
         public bool ExecuteCommand(ReorderParametersCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ReorderParametersCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** ReorderParametersCommandArgs 'Ctrl+R, Ctrl+O'");
             return false;
         }
 
@@ -947,75 +823,45 @@ namespace ShowKeys
             return false;
         }
 
-        public bool ExecuteCommand(RotatePrimaryCaretNextCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** RotatePrimaryCaretNextCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(RotatePrimaryCaretPreviousCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** RotatePrimaryCaretPreviousCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(SelectContainingDeclarationCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** SelectContainingDeclarationCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(ShowClipboardHistoryCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** ShowClipboardHistoryCommandArgs");
-            return false;
-        }
-
         public bool ExecuteCommand(ShowNavigateMenuCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ShowNavigateMenuCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(StartAutomaticOutliningCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** StartAutomaticOutliningCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(SyncClassViewCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** SyncClassViewCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** ShowNavigateMenuCommandArgs 'Alt+`'");
             return false;
         }
 
         public bool ExecuteCommand(ToggleCompletionModeCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ToggleCompletionModeCommandArgs");
-            return false;
-        }
-
-        public bool ExecuteCommand(UncollapseTagCommandArgs args, CommandExecutionContext executionContext)
-        {
-            System.Diagnostics.Debug.WriteLine("*** UncollapseTagCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** ToggleCompletionModeCommandArgs 'Ctrl+Alt+Space'");
             return false;
         }
 
         public bool ExecuteCommand(ViewCallHierarchyCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** ViewCallHierarchyCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** ViewCallHierarchyCommandArgs 'Ctrl+K, Ctrl+T'");
             return false;
         }
 
         public bool ExecuteCommand(WordDeleteToEndCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** WordDeleteToEndCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** WordDeleteToEndCommandArgs 'Ctrl+Delete'");
             return false;
         }
 
         public bool ExecuteCommand(WordDeleteToStartCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** WordDeleteToStartCommandArgs");
+            System.Diagnostics.Debug.WriteLine("*** WordDeleteToStartCommandArgs '	Ctrl+Backspace'");
+            return false;
+        }
+
+        public bool ExecuteCommand(NavigateToNextIssueInDocumentCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** NavigateToNextIssueInDocumentCommandArgs 'Alt+PgDn'");
+            return false;
+        }
+
+        public bool ExecuteCommand(NavigateToPreviousIssueInDocumentCommandArgs args, CommandExecutionContext executionContext)
+        {
+            System.Diagnostics.Debug.WriteLine("*** NavigateToPreviousIssueInDocumentCommandArgs 'Alt+PgUp'");
             return false;
         }
 
@@ -1073,29 +919,12 @@ namespace ShowKeys
 
         public CommandState GetCommandState(ViewFormCommandArgs args) => CommandState.Unspecified;
 
-        public CommandState GetCommandState(AutomaticLineEnderCommandArgs args) => CommandState.Unspecified;
-
-        public CommandState GetCommandState(CodeCleanUpCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
         public CommandState GetCommandState(CollapseTagCommandArgs args)
         {
             return CommandState.Unspecified;
         }
 
-        public CommandState GetCommandState(CommitUniqueCompletionListItemCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
         public CommandState GetCommandState(ContractSelectionCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(CopyToInteractiveCommandArgs args)
         {
             return CommandState.Unspecified;
         }
@@ -1115,11 +944,6 @@ namespace ShowKeys
             return CommandState.Unspecified;
         }
 
-        public CommandState GetCommandState(ErrorCommandArgsBase args)
-        {
-            return CommandState.Unspecified;
-        }
-
         public CommandState GetCommandState(ExecuteInInteractiveCommandArgs args)
         {
             return CommandState.Unspecified;
@@ -1135,11 +959,6 @@ namespace ShowKeys
             return CommandState.Unspecified;
         }
 
-        public CommandState GetCommandState(FormatAndValidationCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
         public CommandState GetCommandState(GotoBraceCommandArgs args)
         {
             return CommandState.Unspecified;
@@ -1150,22 +969,7 @@ namespace ShowKeys
             return CommandState.Unspecified;
         }
 
-        public CommandState GetCommandState(GoToContainingDeclarationCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
         public CommandState GetCommandState(GoToDefinitionCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(GoToNextMemberCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(GoToPreviousMemberCommandArgs args)
         {
             return CommandState.Unspecified;
         }
@@ -1180,22 +984,7 @@ namespace ShowKeys
             return CommandState.Unspecified;
         }
 
-        public CommandState GetCommandState(InsertCommentCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
         public CommandState GetCommandState(InsertNextMatchingCaretCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(InvokeCompletionListCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(InvokeSignatureHelpCommandArgs args)
         {
             return CommandState.Unspecified;
         }
@@ -1216,11 +1005,6 @@ namespace ShowKeys
         }
 
         public CommandState GetCommandState(LineStartExtendCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(MoveLastCaretDownCommandArgs args)
         {
             return CommandState.Unspecified;
         }
@@ -1255,32 +1039,12 @@ namespace ShowKeys
             return CommandState.Unspecified;
         }
 
-        public CommandState GetCommandState(OutlineStopHidingAllCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
         public CommandState GetCommandState(OutlineStopHidingCurrentCommandArgs args)
         {
             return CommandState.Unspecified;
         }
 
         public CommandState GetCommandState(OutlineToggleAllCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(OutlineToggleCurrentCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(PasteAsHTMLCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(RemoveLastSecondaryCaretCommandArgs args)
         {
             return CommandState.Unspecified;
         }
@@ -1310,47 +1074,12 @@ namespace ShowKeys
             return CommandState.Unspecified;
         }
 
-        public CommandState GetCommandState(RotatePrimaryCaretNextCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(RotatePrimaryCaretPreviousCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(SelectContainingDeclarationCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(ShowClipboardHistoryCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
         public CommandState GetCommandState(ShowNavigateMenuCommandArgs args)
         {
             return CommandState.Unspecified;
         }
 
-        public CommandState GetCommandState(StartAutomaticOutliningCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(SyncClassViewCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
         public CommandState GetCommandState(ToggleCompletionModeCommandArgs args)
-        {
-            return CommandState.Unspecified;
-        }
-
-        public CommandState GetCommandState(UncollapseTagCommandArgs args)
         {
             return CommandState.Unspecified;
         }
@@ -1368,6 +1097,16 @@ namespace ShowKeys
         public CommandState GetCommandState(WordDeleteToStartCommandArgs args)
         {
             return CommandState.Unspecified;
+        }
+
+        public CommandState GetCommandState(NavigateToNextIssueInDocumentCommandArgs args)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public CommandState GetCommandState(NavigateToPreviousIssueInDocumentCommandArgs args)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
