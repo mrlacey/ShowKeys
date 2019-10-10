@@ -10,11 +10,15 @@ Intended for use during code demos or presentations to help the audience see wha
 Works with
 
 - Back Tab (Shift+Tab)
+- Comment Selection (Ctrl+K, Ctrl+C)
 - Copy (Ctrl+C)
 - Cut (Ctrl+X)
 - Delete (Delete)
+- Duplicate Selection (Ctrl+D)
 - Escape (Escape)
 - Find All References (Shift+F12)
+- Format Document (Ctrl+K, Ctrl+D)
+- Format Selection (Ctrl+K, Ctrl+F)
 - Go To Definition (F12)
 - Invoke Quick Info (Ctrl+K, Ctrl+I)
 - Left (Left Arrow)
@@ -30,6 +34,7 @@ Works with
 - Save (Ctrl+S)
 - Select All (Ctrl+A)
 - Tab (Tab)
+- Uncomment Selection (Ctrl+K, Ctrl+U)
 - Undo (Ctrl+Z)
 - View Code (F7)
 - View Form Designer (Shift+F7)
@@ -46,17 +51,3 @@ The purpose of displaying the keys is to help anyone viewing to understand what 
 
 **Why are some commands only shown for some file types?**
 This is a limitation of Visual Studio extensibility. If you have specific examples of commands that don't work for specific file types, please raise an issue and I'll investigate if it's possible to do anything about it.
-
-<!--
-
-The following commands should work but don't because of a probable VS bug.
-
-- Duplicate Selection (Ctrl+D)
-- Insert Snippet (Ctrl+K, Ctrl+X)
-- Comment Selection (Ctrl+K, Ctrl+C)
-- Uncomment Selection (Ctrl+K, Ctrl+U)
-- Format Document (Ctrl+K, Ctrl+D)
-- Format Selection (Ctrl+K, Ctrl+F)
-- Surround With (Ctrl+K, Ctrl+S)
-
--->
