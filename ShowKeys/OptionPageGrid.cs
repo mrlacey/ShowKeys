@@ -178,5 +178,35 @@ namespace ShowKeys
         [DisplayName("Find All References")]
         [Description("Show keys when the 'Find All References' command is invoked.")]
         public bool ShowFindReferences { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Line End")]
+        [Description("Show keys when the 'Line End' command is invoked.")]
+        public bool ShowLineEnd { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Extend to Line End")]
+        [Description("Show keys when the 'Extend to Line End' command is invoked.")]
+        public bool ShowExtendToLineEnd { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Line Start")]
+        [Description("Show keys when the 'Line Start' command is invoked.")]
+        public bool ShowHome { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Extend to Line Start")]
+        [Description("Show keys when the 'Extend to Line Start' command is invoked.")]
+        public bool ShowExtendToLineStart { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Document End")]
+        [Description("Show keys when the 'Go to Document End' command is invoked.")]
+        public bool ShowDocumentEnd { get; set; } = true;
+
+        [Category("Show Commands")]
+        [DisplayName("Document Start")]
+        [Description("Show keys when the 'Go to Document Start' command is invoked.")]
+        public bool ShowDocumentStart { get; set; } = true;
     }
 }

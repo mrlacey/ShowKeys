@@ -571,13 +571,37 @@ namespace ShowKeys
 
         public bool ExecuteCommand(DocumentEndCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** DocumentEndCommandArgs");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowDocumentEnd)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Control,
+                        Keys.End).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(DocumentStartCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** DocumentStartCommandArgs");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowDocumentStart)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Control,
+                        Keys.Home).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
@@ -714,25 +738,71 @@ namespace ShowKeys
 
         public bool ExecuteCommand(LineEndCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** LineEndCommandArgs");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowLineEnd)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.End).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(LineEndExtendCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** LineEndExtendCommandArgs");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowExtendToLineEnd)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Shift,
+                        Keys.End).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(LineStartCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** LineStartCommandArgs");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowHome)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Home).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
         public bool ExecuteCommand(LineStartExtendCommandArgs args, CommandExecutionContext executionContext)
         {
-            System.Diagnostics.Debug.WriteLine("*** LineStartExtendCommandArgs");
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false && options.ShowExtendToLineStart)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
+                        options,
+                        Keys.Shift,
+                        Keys.Home).ConfigureAwait(false);
+                });
+            }
+
             return false;
         }
 
