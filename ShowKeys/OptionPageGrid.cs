@@ -187,6 +187,6 @@ namespace ShowKeys
         [Category("Show Commands")]
         [DisplayName("Find All References")]
         [Description("Show keys when the 'Find All References' command is invoked.")]
-        public bool ShowFindRefrences { get; set; } = true;
+        public bool ShowFindReferences { get; set; } = true;
     }
 }
