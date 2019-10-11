@@ -88,17 +88,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(CutCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowCut)
+            if (ShowKeysPackage.Instance?.Options.ShowCut ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Control,
-                        Keys.X).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.X);
             }
 
             return false;
@@ -106,17 +98,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(CopyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowCut)
+            if (ShowKeysPackage.Instance?.Options.ShowCopy ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Control,
-                        Keys.C).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.C);
             }
 
             return false;
@@ -124,16 +108,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(PasteCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowPaste)
+            if (ShowKeysPackage.Instance?.Options.ShowPaste ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.V }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.V);
             }
 
             return false;
@@ -141,16 +118,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(EscapeKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowEscape)
+            if (ShowKeysPackage.Instance?.Options.ShowEscape ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Escape }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Escape);
             }
 
             return false;
@@ -158,16 +128,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(TabKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowTab)
+            if (ShowKeysPackage.Instance?.Options.ShowTab ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Tab }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Tab);
             }
 
             return false;
@@ -175,17 +138,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(BackTabKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowBackTab)
+            if (ShowKeysPackage.Instance?.Options.ShowBackTab ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Shift,
-                        Keys.Tab).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Shift, Keys.Tab);
             }
 
             return false;
@@ -193,16 +148,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(PageDownKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowPageDown)
+            if (ShowKeysPackage.Instance?.Options.ShowPageDown ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.PageDown).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.PageDown);
             }
 
             return false;
@@ -210,16 +158,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(PageUpKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowPageUp)
+            if (ShowKeysPackage.Instance?.Options.ShowPageUp ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.PageUp).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.PageUp);
             }
 
             return false;
@@ -227,16 +168,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(DeleteKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowPageUp)
+            if (ShowKeysPackage.Instance?.Options.ShowDelete ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Delete).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Delete);
             }
 
             return false;
@@ -244,17 +178,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(CommentSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowCommentSelection)
+            if (ShowKeysPackage.Instance?.Options.ShowCommentSelection ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.K },
-                        new[] { Keys.Control, Keys.C }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.K }, new[] { Keys.Control, Keys.C });
             }
 
             return false;
@@ -262,17 +188,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(UncommentSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowUncommentSelection)
+            if (ShowKeysPackage.Instance?.Options.ShowUncommentSelection ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.K },
-                        new[] { Keys.Control, Keys.U }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.K }, new[] { Keys.Control, Keys.U });
             }
 
             return false;
@@ -280,17 +198,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(DuplicateSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowDuplicateSelection)
+            if (ShowKeysPackage.Instance?.Options.ShowDuplicateSelection ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Control,
-                        Keys.D).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.D);
             }
 
             return false;
@@ -298,17 +208,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(FormatDocumentCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowFormatDocument)
+            if (ShowKeysPackage.Instance?.Options.ShowFormatDocument ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.K },
-                        new[] { Keys.Control, Keys.D }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.K }, new[] { Keys.Control, Keys.D });
             }
 
             return false;
@@ -316,17 +218,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(FormatSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowFormatSelection)
+            if (ShowKeysPackage.Instance?.Options.ShowFormatSelection ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.K },
-                        new[] { Keys.Control, Keys.F }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.K }, new[] { Keys.Control, Keys.F });
             }
 
             return false;
@@ -334,17 +228,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(InvokeQuickInfoCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowInvokeQuickInfo)
+            if (ShowKeysPackage.Instance?.Options.ShowInvokeQuickInfo ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.K },
-                        new[] { Keys.Control, Keys.I }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.K }, new[] { Keys.Control, Keys.I });
             }
 
             return false;
@@ -352,17 +238,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(MoveSelectedLinesDownCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowMoveSelectedLineDown)
+            if (ShowKeysPackage.Instance?.Options.ShowMoveSelectedLineDown ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Alt,
-                        Keys.Down).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Alt, Keys.Down);
             }
 
             return false;
@@ -370,17 +248,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(MoveSelectedLinesUpCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowMoveSelectedLineUp)
+            if (ShowKeysPackage.Instance?.Options.ShowMoveSelectedLineUp ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Alt,
-                        Keys.Up).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Alt, Keys.Up);
             }
 
             return false;
@@ -388,17 +258,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(RedoCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowRedo)
+            if (ShowKeysPackage.Instance?.Options.ShowRedo ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Control,
-                        Keys.Y).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.Y);
             }
 
             return false;
@@ -406,17 +268,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(RenameCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowRename)
+            if (ShowKeysPackage.Instance?.Options.ShowRename ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.R },
-                        new[] { Keys.Control, Keys.R }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.R }, new[] { Keys.Control, Keys.R });
             }
 
             return false;
@@ -424,17 +278,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(SaveCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowSave)
+            if (ShowKeysPackage.Instance?.Options.ShowSave ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Control,
-                        Keys.S).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.S);
             }
 
             return false;
@@ -442,17 +288,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(SelectAllCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowSelectAll)
+            if (ShowKeysPackage.Instance?.Options.ShowSelectAll ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Control,
-                        Keys.A).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.A);
             }
 
             return false;
@@ -460,17 +298,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(UndoCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowUndo)
+            if (ShowKeysPackage.Instance?.Options.ShowUndo ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Control,
-                        Keys.Z).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.Z);
             }
 
             return false;
@@ -478,16 +308,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ViewCodeCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowViewCode)
+            if (ShowKeysPackage.Instance?.Options.ShowViewCode ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.F7).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.F7);
             }
 
             return false;
@@ -495,17 +318,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ViewFormCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowViewDesigner)
+            if (ShowKeysPackage.Instance?.Options.ShowViewDesigner ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Shift,
-                        Keys.F7).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Shift, Keys.F7);
             }
 
             return false;
@@ -513,17 +328,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(CollapseTagCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowCollapseTag)
+            if (ShowKeysPackage.Instance?.Options.ShowCollapseTag ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.M },
-                        new[] { Keys.Control, Keys.T }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.M }, new[] { Keys.Control, Keys.T });
             }
 
             return false;
@@ -531,18 +338,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ContractSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowContractSelection)
+            if (ShowKeysPackage.Instance?.Options.ShowContractSelection ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Shift,
-                        Keys.Alt,
-                        KeyAlias.Minus).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Shift, Keys.Alt, KeyAlias.Minus);
             }
 
             return false;
@@ -550,17 +348,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(DocumentEndCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowDocumentEnd)
+            if (ShowKeysPackage.Instance?.Options.ShowDocumentEnd ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Control,
-                        Keys.End).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.End);
             }
 
             return false;
@@ -568,17 +358,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(DocumentStartCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowDocumentStart)
+            if (ShowKeysPackage.Instance?.Options.ShowDocumentStart ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Control,
-                        Keys.Home).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.Home);
             }
 
             return false;
@@ -586,17 +368,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(EncapsulateFieldCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowEncapsulateField)
+            if (ShowKeysPackage.Instance?.Options.ShowEncapsulateField ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.R },
-                        new[] { Keys.Control, Keys.E }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.R }, new[] { Keys.Control, Keys.E });
             }
 
             return false;
@@ -604,16 +378,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ExecuteInInteractiveCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowExecuteInInteractive)
+            if (ShowKeysPackage.Instance?.Options.ShowExecuteInInteractive ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Alt, Keys.Enter }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Alt, Keys.Enter);
             }
 
             return false;
@@ -621,16 +388,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ExpandSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowExpandSelection)
+            if (ShowKeysPackage.Instance?.Options.ShowExpandSelection ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Shift, Keys.Alt, KeyAlias.Equals }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Shift, Keys.Alt, KeyAlias.Equals);
             }
 
             return false;
@@ -638,17 +398,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(FindReferencesCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowFindReferences)
+            if (ShowKeysPackage.Instance?.Options.ShowFindReferences ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Shift,
-                        Keys.F12).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Shift, Keys.F12);
             }
 
             return false;
@@ -656,16 +408,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(GotoBraceCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowGotoBrace)
+            if (ShowKeysPackage.Instance?.Options.ShowGotoBrace ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, KeyAlias.ClosingSquareBrace }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, KeyAlias.ClosingSquareBrace);
             }
 
             return false;
@@ -673,16 +418,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(GotoBraceExtCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowGotoBrace)
+            if (ShowKeysPackage.Instance?.Options.ShowGotoBrace ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.Shift, KeyAlias.ClosingSquareBrace }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.Shift, KeyAlias.ClosingSquareBrace);
             }
 
             return false;
@@ -690,16 +428,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(GoToDefinitionCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowGoToDefinition)
+            if (ShowKeysPackage.Instance?.Options.ShowGoToDefinition ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.F12).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.F12);
             }
 
             return false;
@@ -707,16 +438,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(HelpCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowHelp)
+            if (ShowKeysPackage.Instance?.Options.ShowHelp ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.F1 }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.F1);
             }
 
             return false;
@@ -724,16 +448,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(InsertAllMatchingCaretsCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowInsertAllMatchingCarets)
+            if (ShowKeysPackage.Instance?.Options.ShowInsertAllMatchingCarets ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Shift, Keys.Alt, KeyAlias.SemiColon }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Shift, Keys.Alt, KeyAlias.SemiColon);
             }
 
             return false;
@@ -741,16 +458,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(InsertNextMatchingCaretCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowInsertNextMatchingCarets)
+            if (ShowKeysPackage.Instance?.Options.ShowInsertNextMatchingCarets ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Shift, Keys.Alt, Keys.Decimal }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Shift, Keys.Alt, Keys.Decimal);
             }
 
             return false;
@@ -758,16 +468,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(LineEndCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowLineEnd)
+            if (ShowKeysPackage.Instance?.Options.ShowLineEnd ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.End).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.End);
             }
 
             return false;
@@ -775,17 +478,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(LineEndExtendCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowExtendToLineEnd)
+            if (ShowKeysPackage.Instance?.Options.ShowExtendToLineEnd ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Shift,
-                        Keys.End).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Shift, Keys.End);
             }
 
             return false;
@@ -793,16 +488,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(LineStartCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowHome)
+            if (ShowKeysPackage.Instance?.Options.ShowHome ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Home).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Home);
             }
 
             return false;
@@ -810,17 +498,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(LineStartExtendCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowExtendToLineStart)
+            if (ShowKeysPackage.Instance?.Options.ShowExtendToLineStart ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Shift,
-                        Keys.Home).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Shift, Keys.Home);
             }
 
             return false;
@@ -828,16 +508,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(NavigateToNextHighlightedReferenceCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowNavigateToNextHighlightedReference)
+            if (ShowKeysPackage.Instance?.Options.ShowNavigateToNextHighlightedReference ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.Shift, Keys.Down }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.Shift, Keys.Down);
             }
 
             return false;
@@ -845,16 +518,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(NavigateToPreviousHighlightedReferenceCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowNavigateToPreviousHighlightedReference)
+            if (ShowKeysPackage.Instance?.Options.ShowNavigateToPreviousHighlightedReference ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.Shift, Keys.Up }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.Shift, Keys.Up);
             }
 
             return false;
@@ -862,16 +528,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(OpenLineAboveCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowOpenLineAbove)
+            if (ShowKeysPackage.Instance?.Options.ShowOpenLineAbove ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.Enter }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.Enter);
             }
 
             return false;
@@ -879,16 +538,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(OpenLineBelowCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowOpenLineBelow)
+            if (ShowKeysPackage.Instance?.Options.ShowOpenLineBelow ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.Shift, Keys.Enter }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.Shift, Keys.Enter);
             }
 
             return false;
@@ -896,17 +548,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(OutlineCollapseToDefinitionsCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowOutlineCollapseToDefinitions)
+            if (ShowKeysPackage.Instance?.Options.ShowOutlineCollapseToDefinitions ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.M },
-                        new[] { Keys.Control, Keys.O }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.M }, new[] { Keys.Control, Keys.O });
             }
 
             return false;
@@ -914,17 +558,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(OutlineHideSelectionCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowOutlineHideSelection)
+            if (ShowKeysPackage.Instance?.Options.ShowOutlineHideSelection ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.M },
-                        new[] { Keys.Control, Keys.H }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.M }, new[] { Keys.Control, Keys.H });
             }
 
             return false;
@@ -932,17 +568,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(OutlineStopHidingCurrentCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowOutlineStopHidingCurrent)
+            if (ShowKeysPackage.Instance?.Options.ShowOutlineStopHidingCurrent ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.M },
-                        new[] { Keys.Control, Keys.U }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.M }, new[] { Keys.Control, Keys.U });
             }
 
             return false;
@@ -950,17 +578,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(OutlineToggleAllCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowOutlineToggleAll)
+            if (ShowKeysPackage.Instance?.Options.ShowOutlineToggleAll ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.M },
-                        new[] { Keys.Control, Keys.L }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.M }, new[] { Keys.Control, Keys.L });
             }
 
             return false;
@@ -968,17 +588,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(RemoveParametersCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowRemoveParameters)
+            if (ShowKeysPackage.Instance?.Options.ShowRemoveParameters ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.R },
-                        new[] { Keys.Control, Keys.V }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.R }, new[] { Keys.Control, Keys.V });
             }
 
             return false;
@@ -986,17 +598,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ReorderParametersCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowReorderParameters)
+            if (ShowKeysPackage.Instance?.Options.ShowReorderParameters ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.R },
-                        new[] { Keys.Control, Keys.O }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.R }, new[] { Keys.Control, Keys.O });
             }
 
             return false;
@@ -1004,16 +608,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ReturnKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowReturn)
+            if (ShowKeysPackage.Instance?.Options.ShowReturn ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Enter).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Enter);
             }
 
             return false;
@@ -1021,16 +618,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(LeftKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowLeft)
+            if (ShowKeysPackage.Instance?.Options.ShowLeft ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Left).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Left);
             }
 
             return false;
@@ -1038,16 +628,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(RightKeyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowRight)
+            if (ShowKeysPackage.Instance?.Options.ShowRight ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        Keys.Right).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Right);
             }
 
             return false;
@@ -1055,16 +638,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ShowNavigateMenuCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowShowNavigateMenu)
+            if (ShowKeysPackage.Instance?.Options.ShowShowNavigateMenu ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Alt, KeyAlias.BackTick }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Alt, KeyAlias.BackTick);
             }
 
             return false;
@@ -1072,16 +648,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ToggleCompletionModeCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowToggleCompletionMode)
+            if (ShowKeysPackage.Instance?.Options.ShowToggleCompletionMode ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.Alt, Keys.Space }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.Alt, Keys.Space);
             }
 
             return false;
@@ -1089,17 +658,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(ViewCallHierarchyCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowViewCallHierarchy)
+            if (ShowKeysPackage.Instance?.Options.ShowViewCallHierarchy ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.K },
-                        new[] { Keys.Control, Keys.T }).ConfigureAwait(false);
-                });
+                this.ShowKeys(new[] { Keys.Control, Keys.K }, new[] { Keys.Control, Keys.T });
             }
 
             return false;
@@ -1107,16 +668,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(WordDeleteToEndCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowWordDeleteToEnd)
+            if (ShowKeysPackage.Instance?.Options.ShowWordDeleteToEnd ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.Delete }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.Delete);
             }
 
             return false;
@@ -1124,16 +678,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(WordDeleteToStartCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowWordDeleteToStart)
+            if (ShowKeysPackage.Instance?.Options.ShowWordDeleteToStart ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Control, Keys.Back }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Control, Keys.Back);
             }
 
             return false;
@@ -1141,16 +688,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(NavigateToNextIssueInDocumentCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowNavigateToNextIssueInDocument)
+            if (ShowKeysPackage.Instance?.Options.ShowNavigateToNextIssueInDocument ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Alt, Keys.PageDown }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Alt, Keys.PageDown);
             }
 
             return false;
@@ -1158,16 +698,9 @@ namespace ShowKeys
 
         public bool ExecuteCommand(NavigateToPreviousIssueInDocumentCommandArgs args, CommandExecutionContext executionContext)
         {
-            var options = ShowKeysPackage.Instance?.Options;
-
-            if (options?.IsEnabled ?? false && options.ShowNavigateToPreviousIssueInDocument)
+            if (ShowKeysPackage.Instance?.Options.ShowNavigateToPreviousIssueInDocument ?? false)
             {
-                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
-                {
-                    await KeyPressAdornment.DisplayedInstance.ShowAsync(
-                        options,
-                        new[] { Keys.Alt, Keys.PageUp }).ConfigureAwait(false);
-                });
+                this.ShowKeys(Keys.Alt, Keys.PageUp);
             }
 
             return false;
@@ -1302,5 +835,23 @@ namespace ShowKeys
         public CommandState GetCommandState(NavigateToNextIssueInDocumentCommandArgs args) => CommandState.Unspecified;
 
         public CommandState GetCommandState(NavigateToPreviousIssueInDocumentCommandArgs args) => CommandState.Unspecified;
+
+        private void ShowKeys(params Keys[] keys)
+        {
+            this.ShowKeys(new[] { keys });
+        }
+
+        private void ShowKeys(params Keys[][] keys)
+        {
+            var options = ShowKeysPackage.Instance?.Options;
+
+            if (options?.IsEnabled ?? false)
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await KeyPressAdornment.DisplayedInstance.ShowAsync(options, keys).ConfigureAwait(false);
+                });
+            }
+        }
     }
 }
