@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![Works with Visual Studio 2019](https://img.shields.io/static/v1.svg?label=VS&message=2019&color=5F2E96)
 
-Show the default keyboard shortcuts on screen when common commands are invoked.
+Show the default keyboard shortcuts on-screen when common commands are invoked.
 
 ![Example screenshot of shortcut being displayed](./Assets/example.png)
 
