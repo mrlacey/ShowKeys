@@ -6,15 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
 namespace ShowKeys
 {
-    [ProvideAutoLoad(Microsoft.VisualStudio.Shell.Interop.UIContextGuids.SolutionHasMultipleProjects, PackageAutoLoadFlags.BackgroundLoad)]
-    [ProvideAutoLoad(Microsoft.VisualStudio.Shell.Interop.UIContextGuids.SolutionHasSingleProject, PackageAutoLoadFlags.BackgroundLoad)]
+    [ProvideAutoLoad(UIContextGuids.SolutionHasMultipleProjects, PackageAutoLoadFlags.BackgroundLoad)]
+    [ProvideAutoLoad(UIContextGuids.SolutionHasSingleProject, PackageAutoLoadFlags.BackgroundLoad)]
+    [ProvideAutoLoad(UIContextGuids80.NoSolution, PackageAutoLoadFlags.BackgroundLoad)]
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(ShowKeysPackage.PackageGuidString)]
-    [InstalledProductRegistration("#110", "#112", "1.2", IconResourceID = 400)] // Info on this package for Help/About
+    [InstalledProductRegistration("#110", "#112", "2.0", IconResourceID = 400)] // Info on this package for Help/About
     [ProvideOptionPage(typeof(OptionPageGrid), "Show Keys", "General", 0, 0, true)]
     [ProvideProfileAttribute(typeof(OptionPageGrid), "Show Keys", "General", 106, 107, isToolsOptionPage: true, DescriptionResourceID = 108)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
@@ -40,6 +42,7 @@ namespace ShowKeys
 
             Instance = this;
 
+            await EditorCommandHandler.InitializeAsync(this).ConfigureAwait(false);
             await ToggleIfEnabledCommand.InitializeAsync(this).ConfigureAwait(false);
             await OptionsCommand.InitializeAsync(this).ConfigureAwait(false);
         }

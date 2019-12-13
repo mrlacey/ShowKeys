@@ -43,6 +43,32 @@ namespace ShowKeys
             await this.ShowAsync(options, new[] { keys }).ConfigureAwait(false);
         }
 
+        public async Task ShowAsync(OptionPageGrid options, string shortcut)
+        {
+            if (!options?.IsEnabled ?? false)
+            {
+                return;
+            }
+
+            if (this.currentlyShowing == shortcut)
+            {
+                return;
+            }
+
+            this.currentlyShowing = shortcut;
+
+            try
+            {
+                this.Wrapper.Margin = new Thickness(options.Margin);
+
+                await this.DisplayAsync(options, shortcut).ConfigureAwait(false);
+            }
+            finally
+            {
+                this.currentlyShowing = null;
+            }
+        }
+
         public async Task ShowAsync(OptionPageGrid options, params Keys[][] keys)
         {
             if (!options?.IsEnabled ?? false)
@@ -133,6 +159,63 @@ namespace ShowKeys
                     this.Container.Children.Add(new KeyControl
                     {
                         KeyText = GetKeyName(key),
+                        KeyBackground = ColorHelper.GetColor(options.Background),
+                        KeyForeground = ColorHelper.GetColor(options.Foreground),
+                    });
+
+                    firstInGroup = false;
+                }
+            }
+
+            AnimationHelper.FadeIn(this.Container);
+
+            // Need to remain on UI Thread to do the fadeout animations
+            await Task.Delay(1500).ConfigureAwait(true);
+
+            // Don't animate out if already started showing other keys.
+            if (lastRequest == requestId)
+            {
+                AnimationHelper.FadeOut(this.Container);
+            }
+        }
+
+        private async Task DisplayAsync(OptionPageGrid options, string shortcut)
+        {
+            var requestId = Guid.NewGuid();
+            lastRequest = requestId;
+
+            this.Container.Children.Clear();
+            this.Container.Opacity = 0;
+
+            this.Wrapper.Height = 60 * options.KeySize.SizeToScaleFactor();
+
+            foreach (var subgroup in shortcut.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                if (this.Container.Children.Count > 0)
+                {
+                    this.Container.Children.Add(new CombiningControl
+                    {
+                        CombiningText = ", ",
+                        CombiningForeground = ColorHelper.GetColor(options.Foreground),
+                    });
+                }
+
+                var firstInGroup = true;
+
+                foreach (var key in subgroup.Split(new[] { "+" }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    if (!firstInGroup)
+                    {
+                        this.Container.Children.Add(new CombiningControl
+                        {
+                            CombiningText = "+",
+                            CombiningForeground = ColorHelper.GetColor(options.Foreground),
+                        });
+                    }
+
+                    this.Container.Children.Add(new KeyControl
+                    {
+                        KeyText = key.Trim(),
                         KeyBackground = ColorHelper.GetColor(options.Background),
                         KeyForeground = ColorHelper.GetColor(options.Foreground),
                     });
