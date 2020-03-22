@@ -62,7 +62,7 @@ namespace ShowKeys
 #pragma warning restore CA1031 // Do not catch general exception types
             {
                 System.Diagnostics.Debug.WriteLine(exc);
-                ShowKeysOutputPane.Instance.WriteError(ex);
+                ShowKeysOutputPane.Instance.WriteError(exc);
             }
         }
     }
