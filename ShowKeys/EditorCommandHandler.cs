@@ -151,7 +151,7 @@ namespace ShowKeys
                     return;
                 }
 
-                System.Diagnostics.Debug.WriteLine(cmd?.Name);
+                //// System.Diagnostics.Debug.WriteLine(cmd?.Name);
                 if (string.IsNullOrWhiteSpace(cmd?.Name) || ShouldCommandBeIgnored(cmd))
                 {
                     return;
@@ -169,9 +169,11 @@ namespace ShowKeys
                     await KeyPressAdornment.DisplayedInstance.ShowAsync(ShowKeysPackage.Instance?.Options, shortcut).ConfigureAwait(false);
                 });
             }
+#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)
+#pragma warning restore CA1031 // Do not catch general exception types
             {
-                ShowKeysOutputPane.Instance.Write(ex.Message);
+                ShowKeysOutputPane.Instance.WriteError(ex);
             }
         }
     }

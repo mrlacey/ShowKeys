@@ -41,6 +41,21 @@ namespace ShowKeys
             this.wmPane.OutputString(message);
         }
 
+        public void WriteError(Exception exc)
+        {
+            if (exc == null)
+            {
+                return;
+            }
+
+            ThreadHelper.ThrowIfNotOnUIThread();
+
+            this.wmPane.OutputString(string.Empty);
+            this.wmPane.OutputString(exc.Message);
+            this.wmPane.OutputString(exc.Source);
+            this.wmPane.OutputString(exc.StackTrace);
+        }
+
         public void Activate()
         {
             ThreadHelper.ThrowIfNotOnUIThread();
