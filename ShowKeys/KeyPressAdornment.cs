@@ -4,6 +4,7 @@
 
 using System;
 using System.Windows.Controls;
+using System.Windows.Media;
 using Microsoft.VisualStudio.Text.Editor;
 
 namespace ShowKeys
@@ -47,6 +48,14 @@ namespace ShowKeys
                 // Put it on the left, allow content alignment to center
                 Canvas.SetLeft(DisplayedInstance, 0);
                 DisplayedInstance.Width = this.view.ViewportWidth;
+
+                // Having a single DisplayedInstance and mulitple open documents can lead to it being added to multiple adornment layers and there being a race condition.
+                var parent = VisualTreeHelper.GetParent(DisplayedInstance);
+
+                if (parent != null && parent is IAdornmentLayer parentLayer)
+                {
+                    parentLayer.RemoveAdornment(DisplayedInstance);
+                }
 
                 // Add to the adornment layer and make it relative to the viewport
                 this.adornmentLayer.AddAdornment(AdornmentPositioningBehavior.ViewportRelative, null, null, DisplayedInstance, null);
