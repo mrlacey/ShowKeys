@@ -50,6 +50,11 @@ namespace ShowKeys
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(shortcut))
+            {
+                return;
+            }
+
             if (this.currentlyShowing == shortcut)
             {
                 return;

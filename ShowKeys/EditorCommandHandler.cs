@@ -166,8 +166,17 @@ namespace ShowKeys
 
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
-                    // If VS is closing, may not have a DisplayedInstance availabel to show anything.
-                    await KeyPressAdornment.DisplayedInstance?.ShowAsync(ShowKeysPackage.Instance?.Options, shortcut).ConfigureAwait(false);
+                    // If VS is closing, may not have a DisplayedInstance available to show anything.
+                    try
+                    {
+                        await KeyPressAdornment.DisplayedInstance.ShowAsync(ShowKeysPackage.Instance?.Options, shortcut).ConfigureAwait(false);
+                    }
+#pragma warning disable CA1031 // Do not catch general exception types
+                    catch (Exception exc)
+#pragma warning restore CA1031 // Do not catch general exception types
+                    {
+                        System.Diagnostics.Debug.WriteLine(exc);
+                    }
                 });
             }
 #pragma warning disable CA1031 // Do not catch general exception types
