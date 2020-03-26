@@ -16,7 +16,7 @@ namespace ShowKeys
     [ProvideAutoLoad(UIContextGuids80.NoSolution, PackageAutoLoadFlags.BackgroundLoad)]
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(ShowKeysPackage.PackageGuidString)]
-    [InstalledProductRegistration("#110", "#112", "2.1", IconResourceID = 400)] // Info on this package for Help/About
+    [InstalledProductRegistration("#110", "#112", "2.2", IconResourceID = 400)] // Info on this package for Help/About
     [ProvideOptionPage(typeof(OptionPageGrid), "Show Keys", "General", 0, 0, true)]
     [ProvideProfileAttribute(typeof(OptionPageGrid), "Show Keys", "General", 106, 107, isToolsOptionPage: true, DescriptionResourceID = 108)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
