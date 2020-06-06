@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="ShowKeys.ab91604c-e94a-498a-93fd-752dcc712b91" Version="2.2" Language="en-US" Publisher="Matt Lacey" />
+        <Identity Id="ShowKeys.ab91604c-e94a-498a-93fd-752dcc712b91" Version="2.3" Language="en-US" Publisher="Matt Lacey" />
         <DisplayName>Show Keys</DisplayName>
         <Description xml:space="preserve">Show the default keyboard shortcuts on-screen when common commands are invoked.
 Intended for use during code demos or presentations to help the audience see what you're typing.</Description>
         <MoreInfo>https://github.com/mrlacey/ShowKeys</MoreInfo>
-        <Icon>ShowKeys.ico</Icon>
+        <Icon>ShowKeysLogo.png</Icon>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />

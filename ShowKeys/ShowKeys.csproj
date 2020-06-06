@@ -162,9 +162,9 @@
     </VSCTCompile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ShowKeys.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="ShowKeysLogo.png">
       <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
